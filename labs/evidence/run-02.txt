@@ -1,0 +1,42 @@
+$ env REQUIRE_COMPILED=1 ./check.sh
+== unit tests (correct controller) ==
+== the flawed controller must FAIL its tests (that is the point) ==
+ok: flawed controller fails as designed
+== generated LISP passes the safety lint ==
+lisp/apd-lib.lsp: OK
+/var/folders/f4/xpgg8_rd1m50b2z8w_0xpnt80000gn/T/tmp.1Jy4jMQqYQ: OK
+== course links, manifest and native protocol ==
+PASS course index and local links: 9 labs, 29 Markdown files
+PASS scenario input validation: typo keys, invalid levels and non-Boolean values rejected
+PASS native protocol: invalid Boolean, negative time, trailing data, repeated timestamp rejected
+PASS optimized-Python rejection (assertion checks cannot silently disappear)
+== actual compiled ST and deterministic plant ==
+PASS foundations: 8 truth rows, latch/stop precedence, R_TRIG, CTU, TON boundary/reset
+PASS station: cycle, alternation, fallback, faults, restart, 5s boundary, chatter, 1024 input images
+PASS replay cycle.json: 8 scans -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/cycle.csv
+PASS replay timer.json: 7 scans -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/timer.csv
+{"fault": "none", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 72500, "no_pump_alarm_scans": 0, "p1_on_scans": 648, "p2_on_scans": 563, "scans": 1800, "spill_ml": 0}
+{"fault": "none", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 72500, "no_pump_alarm_scans": 0, "p1_on_scans": 648, "p2_on_scans": 563, "scans": 1800, "spill_ml": 0}
+{"fault": "both-trip", "high_alarm_scans": 355, "invalid_alarm_scans": 0, "max_volume_ml": 100000, "no_pump_alarm_scans": 315, "p1_on_scans": 626, "p2_on_scans": 341, "scans": 1800, "spill_ml": 84400}
+{"fault": "bad-float", "high_alarm_scans": 355, "invalid_alarm_scans": 315, "max_volume_ml": 100000, "no_pump_alarm_scans": 0, "p1_on_scans": 626, "p2_on_scans": 341, "scans": 1800, "spill_ml": 84400}
+OBSERVED original comparison: 37 rows, 2 pump-output differences -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/original-comparison.csv
+{"scenario": "T02 lag joins after 5 s", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+{"scenario": "T07 high level", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+Alarm sets are NOT equivalent: original ST exposes only 3 aggregate alarms; Python has individual trip alarms.
+PASS all compiled labs (includes known original-model discrepancy, not equivalence)
+....................../Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/tests/test_tools.py:32: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/samples/drawing-extract-a.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader(open(HERE / "samples" / "drawing-extract-a.csv")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+../Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/tests/test_tools.py:54: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/samples/station-log-synthetic.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader(open(HERE / "samples" / "station-log-synthetic.csv")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+./Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/tests/test_tools.py:41: ResourceWarning: unclosed file <_io.TextIOWrapper name='/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/project/samples/spec-checklist-ai.csv' mode='r' encoding='UTF-8'>
+  rows = list(csv.DictReader(open(HERE / "samples" / "spec-checklist-ai.csv")))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+......
+----------------------------------------------------------------------
+Ran 31 tests in 0.128s
+
+OK
+
+EXIT 0

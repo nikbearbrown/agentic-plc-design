@@ -21,3 +21,13 @@ The pinned installer completed. Actual MatIEC-compiled starter, timer/counter/ed
 Nine lab documents now live in labs/, with manifest.json, source examples, expected scenarios, solutions and an offline trace viewer. End-of-course case studies include local executable adaptations for three direct PLC tools and an adjacent testing/debugging workflow. BearBrown source audit is recorded under reference/ and labs/evidence/. A concurrently supplied checkpoint commit 8449838 included the first lab files and three case studies; it is preserved.
 
 Next: independent learner run, repairs, browser check, final regression and execution ledger. No hardware, publication or engineering gate signatures.
+
+## Final checkpoint — independent learner and verification complete
+
+Nine executable labs and four end-of-course case studies are complete as simulation-only teaching drafts. The independent learner completed the documented path and supplied predictions, extra scenarios, copied repairs, a fourth mutation and a review packet. Five reported defects were repaired and independently rerun. Final execution used implementation commit `316e68e4a90ee66aff773d9720ee7e269ae755fb`; that concurrently supplied byline commit and the earlier case-study commit were preserved.
+
+`REQUIRE_COMPILED=1 ./check.sh` and the compiled mutation suite passed. Execution receipts, hashes, raw outputs, selected CSVs, platform/limitations and learner findings are under `labs/evidence/`, `labs/VERIFICATION.md` and `labs/LEARNER-REPORT.md`. The browser denied a file-URL view of the offline HTML, so visual interaction remains NOT VERIFIED; generation/data/syntax checks completed without bypassing policy. Vendor runtimes, real devices, electrical tables and human review remain unverified/unsigned.
+
+Website integration handoff: read `labs/manifest.json` plus `case-studies/README.md` at the final committed course revision. New paths requiring an explicit website import-allowlist decision are `labs/*.md`, `labs/solutions/README.md`, `labs/scenarios/*.json`, `labs/plc/*.st`, `labs/toolchain.lock.json`, selected `labs/evidence/*`, `case-studies/*.md`, `reference/open-source-toolchain.md`, and `reference/bearbrown-plc-inventory.md`. Source executable scripts stay in the course repository unless separately reviewed for downloads. No website files were changed by this task.
+
+Remaining next action belongs to the human: review the synthetic failure/restart policy and teaching content, without mistaking software execution for field approval. No pending author code fix is known. No publication, device action, reference-table verification or gate signature was performed.

@@ -1,0 +1,38 @@
+scenario,t_s,python_p1,python_p2,compiled_p1,compiled_p2,pump_match
+"T01 normal cycle, lead only",1,0,0,0,0,1
+"T01 normal cycle, lead only",2,0,0,0,0,1
+"T01 normal cycle, lead only",3,1,0,1,0,1
+"T01 normal cycle, lead only",4,1,0,1,0,1
+"T01 normal cycle, lead only",5,1,0,1,0,1
+"T01 normal cycle, lead only",6,1,0,1,0,1
+"T01 normal cycle, lead only",7,1,0,1,0,1
+"T01 normal cycle, lead only",8,0,0,0,0,1
+"T01 normal cycle, lead only",9,0,0,0,0,1
+T02 lag joins after 5 s,1,1,0,1,0,1
+T02 lag joins after 5 s,2,1,0,1,0,1
+T02 lag joins after 5 s,3,1,0,1,0,1
+T02 lag joins after 5 s,4,1,0,1,0,1
+T02 lag joins after 5 s,5,1,1,1,0,0
+T02 lag joins after 5 s,6,1,1,1,1,1
+T02 lag joins after 5 s,7,1,1,1,1,1
+T02 lag joins after 5 s,8,1,1,1,1,1
+T02 lag joins after 5 s,9,1,1,1,1,1
+T02 lag joins after 5 s,10,0,0,0,0,1
+T02 lag joins after 5 s,11,0,0,0,0,1
+T03 alternation on second cycle,1,1,0,1,0,1
+T03 alternation on second cycle,2,0,0,0,0,1
+T03 alternation on second cycle,3,0,1,0,1,1
+T03 alternation on second cycle,4,0,0,0,0,1
+T04 pump 1 seal fail,1,0,1,0,1,1
+T04 pump 1 seal fail,2,0,1,0,1,1
+T05 pump 1 in Off,1,0,1,0,1,1
+T05 pump 1 in Off,2,0,1,0,1,1
+T06 both pumps faulted,1,0,0,0,0,1
+T06 both pumps faulted,2,0,0,0,0,1
+T07 high level,1,1,0,1,0,1
+T07 high level,2,1,0,1,0,1
+T07 high level,3,1,0,1,0,1
+T07 high level,4,1,0,1,0,1
+T07 high level,5,1,1,1,0,0
+T07 high level,6,1,1,1,1,1
+"T08 float fault (lead float up, off float down)",1,1,0,1,0,1

@@ -1,0 +1,7 @@
+$ python3 scripts/lab.py compare --output build/reference/case-context-review.csv
+OBSERVED original comparison: 37 rows, 2 pump-output differences -> build/reference/case-context-review.csv
+{"scenario": "T02 lag joins after 5 s", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+{"scenario": "T07 high level", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+Alarm sets are NOT equivalent: original ST exposes only 3 aggregate alarms; Python has individual trip alarms.
+
+EXIT 0

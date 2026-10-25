@@ -1,0 +1,39 @@
+{
+  "matiec_commit": "3a41303bcb4e50403417bc39c63f88981d7d961e",
+  "mutant": null,
+  "sources": {
+    "labs/plc/foundations.st": "e7084e1829b797a47eb0cd164e288d53434f9f6a11829c98623e6044ab28a78d",
+    "labs/plc/station.st": "2ad97d9fd2923e9c4869cebf5cdf45b5e45f108ad92c4cc35f44646312183161",
+    "project/plc/lead_lag.st": "4b10ebc889c61ac176140f6df0ec5530265ada24a586be04af416866ab57cd88",
+    "labs/runtime/harness.c": "40cb5a55910e1165051b9ea30f4b3df06f4ea4c3c3b9491c779b7c7057767259"
+  },
+  "commands": [
+    [
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/.toolchain/prefix/bin/iec2c",
+      "-I",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/.toolchain/src/matiec-3a41303bcb4e50403417bc39c63f88981d7d961e/lib",
+      "-T",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/combined.st"
+    ],
+    [
+      "/opt/homebrew/opt/llvm/bin/clang",
+      "-std=c99",
+      "-O2",
+      "-Wno-unused-function",
+      "-I",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/.toolchain/src/matiec-3a41303bcb4e50403417bc39c63f88981d7d961e/lib/C",
+      "-I",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/harness.c",
+      "-lm",
+      "-o",
+      "/Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/plc-sim"
+    ]
+  ],
+  "compiler": "Homebrew clang version 22.1.7",
+  "platform": "macOS-26.5.1-arm64-arm-64bit-Mach-O",
+  "python": "3.14.6",
+  "combined_st_sha256": "7b68131d2714a3d75bf16f8d24ae01a093bca6b878627adde51d972a9d7730d5",
+  "executable_sha256": "597255c20c4f990e4e567f1572d4cb24fc898b6e5d779b482ccc1550fded34ce"
+}

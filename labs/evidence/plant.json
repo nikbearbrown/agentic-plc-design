@@ -1,0 +1,11 @@
+{
+  "fault": "none",
+  "scans": 1800,
+  "max_volume_ml": 72500,
+  "spill_ml": 0,
+  "p1_on_scans": 648,
+  "p2_on_scans": 563,
+  "high_alarm_scans": 0,
+  "invalid_alarm_scans": 0,
+  "no_pump_alarm_scans": 0
+}

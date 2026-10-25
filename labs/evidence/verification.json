@@ -1,0 +1,135 @@
+{
+  "executed_at_utc": "2026-10-25T19:50:06.330377+00:00",
+  "implementation_commit": "316e68e4a90ee66aff773d9720ee7e269ae755fb",
+  "platform": "ProductName:\t\tmacOS\nProductVersion:\t\t26.5.1\nBuildVersion:\t\t25F80",
+  "architecture": "arm64",
+  "python": "Python 3.14.6",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "scripts/bootstrap.py",
+        "--apply",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-00.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "build",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-01.txt"
+    },
+    {
+      "command": [
+        "env",
+        "REQUIRE_COMPILED=1",
+        "./check.sh"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-02.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "mutations",
+        "--apply"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-03.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "plant",
+        "--fault",
+        "pump1-trip",
+        "--output",
+        "build/reference/pump1-trip.csv"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-04.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "plant",
+        "--fault",
+        "blocked-pump1",
+        "--output",
+        "build/reference/blocked-pump1.csv"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-05.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "replay",
+        "labs/scenarios/cycle.json",
+        "--output",
+        "build/reference/case-tia-blueprint.csv"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-06.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "compare",
+        "--output",
+        "build/reference/case-context-review.csv"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-07.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/lab.py",
+        "replay",
+        "labs/scenarios/timer.json",
+        "--output",
+        "build/reference/case-portable-timer.csv"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-08.txt"
+    },
+    {
+      "command": [
+        "python3",
+        "scripts/view_trace.py",
+        "build/reference/plant.csv",
+        "--output",
+        "build/reference/plant.html"
+      ],
+      "exit_code": 0,
+      "output": "labs/evidence/run-09.txt"
+    }
+  ],
+  "sources_sha256": {
+    "scripts/bootstrap.py": "786edb398f5308b76560630cea0cd4f4585d64e118ee3ee8f8e878038cf108e7",
+    "scripts/lab.py": "c9d6464343a88dc7168e885c14170014efcb5b2c69dad1af68b099a5220987b3",
+    "scripts/check_course.py": "e5d16afc33e50bc5932426fe4c0febd3351bd8afccf848ce8478a6497fe560be",
+    "scripts/view_trace.py": "5419e0bf4cc2d039f9c2eba76f04d1242d0dbcd8fa79e29ce7d8933b568e9f98",
+    "labs/plc/foundations.st": "e7084e1829b797a47eb0cd164e288d53434f9f6a11829c98623e6044ab28a78d",
+    "labs/plc/station.st": "2ad97d9fd2923e9c4869cebf5cdf45b5e45f108ad92c4cc35f44646312183161",
+    "labs/runtime/harness.c": "40cb5a55910e1165051b9ea30f4b3df06f4ea4c3c3b9491c779b7c7057767259",
+    "labs/toolchain.lock.json": "d3eef5250b2500f1c8c64c4a4243c69d6a0f9a0bd03f12b9277651c4136bc330",
+    "project/plc/lead_lag.st": "4b10ebc889c61ac176140f6df0ec5530265ada24a586be04af416866ab57cd88",
+    "project/tools/sim.py": "61dd32015806317243210bdf3b88e51e9d525bc416558978b347d192c698ffd1"
+  },
+  "browser_visual_verification": "DENIED by file URL protocol policy; no bypass attempted",
+  "human_gates": "unsigned",
+  "live_devices": "none"
+}

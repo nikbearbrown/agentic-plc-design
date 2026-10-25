@@ -1,0 +1,4 @@
+$ python3 scripts/lab.py replay labs/scenarios/cycle.json --output build/reference/case-tia-blueprint.csv
+PASS replay cycle.json: 8 scans -> build/reference/case-tia-blueprint.csv
+
+EXIT 0

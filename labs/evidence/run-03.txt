@@ -1,0 +1,16 @@
+$ python3 scripts/lab.py mutations --apply
+BUILD: copy sources -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/ignore-health; MatIEC -> C -> native executable
+Deliberate fault on build COPY: ignore-health
+Compiled: /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/ignore-health/plc-sim
+KILLED ignore-health AssertionError('both tripped: pumps off and no-pump alarm')
+BUILD: copy sources -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/instant-lag; MatIEC -> C -> native executable
+Deliberate fault on build COPY: instant-lag
+Compiled: /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/instant-lag/plc-sim
+KILLED instant-lag AssertionError('lag too early')
+BUILD: copy sources -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/no-alternation; MatIEC -> C -> native executable
+Deliberate fault on build COPY: no-alternation
+Compiled: /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/mutants/no-alternation/plc-sim
+KILLED no-alternation AssertionError('drained cycle must select lead 2 and clear demand')
+PASS mutations: all 3 compiled faults rejected
+
+EXIT 0

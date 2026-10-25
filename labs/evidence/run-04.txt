@@ -1,0 +1,4 @@
+$ python3 scripts/lab.py plant --fault pump1-trip --output build/reference/pump1-trip.csv
+{"fault": "pump1-trip", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 82400, "no_pump_alarm_scans": 0, "p1_on_scans": 623, "p2_on_scans": 604, "scans": 1800, "spill_ml": 0}
+
+EXIT 0

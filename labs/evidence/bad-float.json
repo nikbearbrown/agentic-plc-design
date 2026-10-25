@@ -1,0 +1,11 @@
+{
+  "fault": "bad-float",
+  "scans": 1800,
+  "max_volume_ml": 100000,
+  "spill_ml": 84400,
+  "p1_on_scans": 626,
+  "p2_on_scans": 341,
+  "high_alarm_scans": 355,
+  "invalid_alarm_scans": 315,
+  "no_pump_alarm_scans": 0
+}

@@ -1,0 +1,4 @@
+$ python3 scripts/lab.py plant --fault blocked-pump1 --output build/reference/blocked-pump1.csv
+{"fault": "blocked-pump1", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 82400, "no_pump_alarm_scans": 0, "p1_on_scans": 689, "p2_on_scans": 604, "scans": 1800, "spill_ml": 0}
+
+EXIT 0

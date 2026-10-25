@@ -1,0 +1,4 @@
+$ python3 scripts/lab.py replay labs/scenarios/timer.json --output build/reference/case-portable-timer.csv
+PASS replay timer.json: 7 scans -> build/reference/case-portable-timer.csv
+
+EXIT 0

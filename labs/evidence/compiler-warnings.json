@@ -1,0 +1,10 @@
+{
+  "count": 310,
+  "messages": {
+    "passing 'uint8_t[126]' (aka 'unsigned char[126]') to parameter of type 'char *' converts between pointers to integer types where one is of the unique plain 'char' type and the other is not [-Wpointer-sign]": 1,
+    "equality comparison with extraneous parentheses [-Wparentheses-equality]": 10,
+    "passing an object that undergoes default argument promotion to 'va_start' has undefined behavior [-Wvarargs]": 299
+  },
+  "complete_log": "build/reference/compile.log",
+  "fixed": false
+}

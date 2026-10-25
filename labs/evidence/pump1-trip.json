@@ -1,0 +1,11 @@
+{
+  "fault": "pump1-trip",
+  "scans": 1800,
+  "max_volume_ml": 82400,
+  "spill_ml": 0,
+  "p1_on_scans": 623,
+  "p2_on_scans": 604,
+  "high_alarm_scans": 0,
+  "invalid_alarm_scans": 0,
+  "no_pump_alarm_scans": 0
+}

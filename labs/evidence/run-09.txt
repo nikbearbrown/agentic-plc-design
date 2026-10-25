@@ -1,0 +1,4 @@
+$ python3 scripts/view_trace.py build/reference/plant.csv --output build/reference/plant.html
+Offline trace viewer: /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/plant.html
+
+EXIT 0

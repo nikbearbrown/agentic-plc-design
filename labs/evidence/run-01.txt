@@ -1,0 +1,5 @@
+$ python3 scripts/lab.py build --apply
+BUILD: copy sources -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference; MatIEC -> C -> native executable
+Compiled: /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/plc-sim
+
+EXIT 0

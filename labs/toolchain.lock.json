@@ -1,0 +1,10 @@
+{
+  "matiec_commit": "3a41303bcb4e50403417bc39c63f88981d7d961e",
+  "packages": [
+    {"name":"m4", "version":"1.4.20", "file":"m4-1.4.20.tar.xz", "url":"https://ftp.gnu.org/gnu/m4/m4-1.4.20.tar.xz", "sha256":"e236ea3a1ccf5f6c270b1c4bb60726f371fa49459a8eaaebc90b216b328daf2b", "license":"GPL-3.0-or-later"},
+    {"name":"autoconf", "version":"2.72", "file":"autoconf-2.72.tar.xz", "url":"https://ftp.gnu.org/gnu/autoconf/autoconf-2.72.tar.xz", "sha256":"ba885c1319578d6c94d46e9b0dceb4014caafe2490e437a0dbca3f270a223f5a", "license":"GPL-3.0-or-later; generated configure exception"},
+    {"name":"automake", "version":"1.18.1", "file":"automake-1.18.1.tar.xz", "url":"https://ftp.gnu.org/gnu/automake/automake-1.18.1.tar.xz", "sha256":"168aa363278351b89af56684448f525a5bce5079d0b6842bd910fdd3f1646887", "license":"GPL-2.0-or-later; generated Makefile exception"},
+    {"name":"bison", "version":"3.8.2", "file":"bison-3.8.2.tar.xz", "url":"https://ftp.gnu.org/gnu/bison/bison-3.8.2.tar.xz", "sha256":"9bba0214ccf7f1079c5d59210045227bcf619519840ebfa80cd3849cff5a5bf2", "license":"GPL-3.0-or-later with parser exception"},
+    {"name":"matiec", "version":"3a41303bcb4e50403417bc39c63f88981d7d961e", "file":"matiec-3a41303.tar.gz", "url":"https://codeload.github.com/beremiz/matiec/tar.gz/3a41303bcb4e50403417bc39c63f88981d7d961e", "sha256":"21d249d9c65ff1a26404cfe0969a14a0c12d05e53871e26d77bdd4e8fd0a89a2", "license":"GPL-3.0-or-later compiler; lib/C headers have LGPL notices"}
+  ]
+}

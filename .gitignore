@@ -5,3 +5,5 @@ project/lisp/apd-job-*.lsp
 .DS_Store
 scratch/*
 !scratch/README.md
+.toolchain/
+build/

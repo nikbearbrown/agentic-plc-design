@@ -32,7 +32,7 @@ At each step the work moved a little: the agent generates, the checker verifies,
 
 ### Step 1 — Pick a real target
 
-One tool or claim from the last month. For example: a vendor's AI engineering agent from an announcement; an agent feature in your CAD or PLC software; a new general-purpose agent release. Do not pick anything you cannot get hands on or at least read the documentation for.
+One tool or claim from the last month. For example: a vendor's AI engineering agent from an announcement; an agent feature in your CAD or PLC software; a new general-purpose agent release. Do not pick anything you cannot get hands on or at least read the documentation for. If you want a worked example first, read the three in [case-studies/](../case-studies/README.md), which apply this same sheet to real PLC tools.
 
 ### Step 2 — Fill in the intake sheet
 

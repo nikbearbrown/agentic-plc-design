@@ -1,0 +1,14 @@
+{
+  "mode": "station",
+  "contract": "labs/SPEC.md R3-R6",
+  "scans": [
+    {"ms":0,"inputs":{"level":0},"expected":{"p1_run":0,"p2_run":0,"lead":1}},
+    {"ms":100,"inputs":{"level":2},"expected":{"p1_run":1,"p2_run":0}},
+    {"ms":200,"inputs":{"level":1},"expected":{"p1_run":1,"p2_run":0}},
+    {"ms":300,"inputs":{"level":0},"expected":{"p1_run":0,"p2_run":0,"lead":2}},
+    {"ms":400,"inputs":{"level":2},"expected":{"p1_run":0,"p2_run":1}},
+    {"ms":500,"inputs":{"level":2,"p2_overtemp":1},"expected":{"p1_run":1,"p2_run":0}},
+    {"ms":600,"inputs":{"level":2,"p2_overtemp":1,"p1_seal_fail":1},"expected":{"p1_run":0,"p2_run":0,"no_pump_alarm":1}},
+    {"ms":700,"inputs":{"level":4,"fs1_off":0},"expected":{"p1_run":0,"p2_run":0,"high_alarm":1,"invalid_alarm":1}}
+  ]
+}

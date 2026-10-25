@@ -57,6 +57,8 @@ That runs 31 tests. It should end with `ok: flawed controller fails as designed`
 | 11 | [Capstone: a new job](modules/11-capstone-a-new-job.md) | A real job through the whole workflow |
 | 12 | [Staying current](modules/12-staying-current.md) | Judging new tools and vendor claims |
 
+Three real tools from the wild, written up against the course's rules, are in [case-studies/](case-studies/README.md): a Siemens TIA Portal MCP server, a TIA Portal skills plugin, and a Beckhoff TwinCAT agent. Read them after Module 12, or earlier as a preview of what you will be judging.
+
 See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md](AGENTS.md) for the standing rules every agent in this repo follows, and [reference/](reference/) for the lift-station primer, glossary, an honest AI-exposure map, and a cheat sheet for Claude Code and Codex.
 
 ## What is in the repo
@@ -72,6 +74,7 @@ See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md]
 | `project/samples/` | Synthetic specs, extracts, logs and an AI-written risky script, each with planted errors |
 | `project/tests/` | The test suite |
 | `.claude/` | A skill, a reviewer subagent and a hook, as worked examples for Module 10 |
+| `case-studies/` | Three public agentic PLC tools read against the course rules (nothing installed or run) |
 | `reference/` | Primer, glossary, exposure map, tool-intake checklist, CLI cheat sheet |
 
 ## Requirements

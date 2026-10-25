@@ -1,0 +1,12 @@
+{
+  "mode":"timing",
+  "scans":[
+    {"ms":0,"bits":[1,0],"expected":{"edge":1,"count":1,"done":0,"elapsed_ms":0}},
+    {"ms":100,"bits":[1,0],"expected":{"edge":0,"count":1,"done":0,"elapsed_ms":100}},
+    {"ms":499,"bits":[1,0],"expected":{"done":0,"elapsed_ms":499}},
+    {"ms":500,"bits":[1,0],"expected":{"done":1,"elapsed_ms":500}},
+    {"ms":600,"bits":[0,0],"expected":{"done":0,"elapsed_ms":0}},
+    {"ms":700,"bits":[1,0],"expected":{"edge":1,"count":2,"done":0}},
+    {"ms":800,"bits":[0,1],"expected":{"count":0}}
+  ]
+}

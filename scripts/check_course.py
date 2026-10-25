@@ -10,13 +10,13 @@ from lab import inputs
 ROOT=Path(__file__).resolve().parents[1]
 manifest=json.loads((ROOT/'labs/manifest.json').read_text())
 ids={x['id'] for x in manifest['labs']}
-assert len(ids)==9
+assert len(ids)==len(manifest['labs']) and len(ids)>=9, 'lab ids must be unique'
 for lab in manifest['labs']:
     assert (ROOT/lab['path']).is_file(),lab['path']
     assert set(lab['prerequisites']) <= ids
     assert lab['status'] in {'author-executed','verification-in-progress','learner-executed','workflow-exercised'}
 paths=[ROOT/'README.md',ROOT/'SYLLABUS.md']
-for directory in ('labs','case-studies','reference'):
+for directory in ('labs','case-studies','reference','feedback'):
     paths.extend((ROOT/directory).rglob('*.md'))
 for path in paths:
     for url in re.findall(r'\[[^\]]*\]\(([^)]+)\)',path.read_text()):

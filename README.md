@@ -43,7 +43,7 @@ That runs the original 31 design tests and the executable-course checks. Start t
 
 ## New executable course spine
 
-The course now includes nine detailed labs: native MatIEC setup; scan/state; IEC timers and edges; duplex requirements and tests; closed-loop plant simulation; deliberate compiled faults and repairs; Python-versus-ST discrepancy analysis; agent evidence; and a synthetic capstone with a grading rubric. See [the lab sequence](labs/README.md), [actual verification ledger](labs/VERIFICATION.md), [independent learner report](labs/LEARNER-REPORT.md), and [machine-readable manifest](labs/manifest.json).
+The course now includes ten detailed labs: native MatIEC setup; scan/state; IEC timers and edges; duplex requirements and tests; closed-loop plant simulation; deliberate compiled faults and repairs; Python-versus-ST discrepancy analysis; agent evidence; open-source drawing edits with ezdxf; and a synthetic capstone with a grading rubric. See [the lab sequence](labs/README.md), [actual verification ledger](labs/VERIFICATION.md), [independent learner report](labs/LEARNER-REPORT.md), and [machine-readable manifest](labs/manifest.json).
 
 The control code is translated by MatIEC and compiled to native machine code. A course C harness supplies deterministic simulated scans; Python drives tests and the toy plant. This is actual ST execution, but it is not OpenPLC, a production PLC runtime or real hardware. No account or paid service is needed for the executable labs.
 
@@ -78,7 +78,8 @@ See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md]
 | `project/tools/` | Python tools (standard library only): rule check, devices, I/O, BOM, sizing, AutoLISP generator and linter, cross-checks, L5X reader, spec checker, log summariser, test vectors |
 | `project/data/` | Reference tables (UNVERIFIED until you sign them) and a generic parts catalog with invented part numbers |
 | `project/plc/` | Original `lead_lag.st`, now compiled unchanged by the new lab harness; legacy timing mismatch preserved |
-| `labs/` | Nine executable labs, synthetic contract, ST examples, scenarios, solutions and evidence |
+| `feedback/` | Ledger of JP's corrections, each traced to the tutorial change; agent run records JP's runs are compared with |
+| `labs/` | Ten executable labs, synthetic contract, ST examples, scenarios, solutions and evidence |
 | `scripts/` | Pinned local source installer, native compiler/test driver and offline trace viewer |
 | `project/lisp/` | `apd-lib.lsp`, the safe-by-default AutoLISP helpers |
 | `project/samples/` | Synthetic specs, extracts, logs and an AI-written risky script, each with planted errors |

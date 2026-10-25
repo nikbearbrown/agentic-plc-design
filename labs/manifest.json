@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "title": "Agentic PLC Design \u2014 executable lab spine",
+  "title": "Agentic PLC Design — executable lab spine",
   "simulation_only": true,
   "human_gates": "unsigned",
   "source_commit": "Use the immutable Git commit containing this manifest; execution source checkpoint is recorded in labs/VERIFICATION.md.",
@@ -305,6 +305,43 @@
         "browser_visual_review": false,
         "learner_review": "executed on same macOS host with cached toolchain; see labs/LEARNER-REPORT.md",
         "evidence_kind": "compiled-control simulation"
+      }
+    },
+    {
+      "id": "lab-09",
+      "title": "Drawing edits with ezdxf",
+      "path": "labs/09-drawing-edits-ezdxf.md",
+      "prerequisites": [
+        "lab-00"
+      ],
+      "execution_kind": "python_dxf",
+      "status": "author-executed",
+      "evidence": "feedback/agent-runs/AR-0001-lab-09-ezdxf.md",
+      "slug": "09-drawing-edits-ezdxf",
+      "module_associations": [
+        "03",
+        "04"
+      ],
+      "entry_point": "project/tools/dxf_edit.py",
+      "setup": "labs/09-drawing-edits-ezdxf.md",
+      "commands": [
+        "python3 scripts/dxf_setup.py",
+        "python3 scripts/dxf_setup.py --apply",
+        "python3 project/tools/apd.py dxf extract labs/dxf/station-a.dxf",
+        "python3 project/tools/apd.py dxf replace labs/dxf/station-a.dxf \"7.5 HP\" \"10 HP\" --exclude-layer REV-HISTORY",
+        "python3 project/tools/apd.py dxf replace labs/dxf/station-a.dxf \"7.5 HP\" \"10 HP\" --exclude-layer REV-HISTORY --apply --out scratch/station-a-10hp.dxf"
+      ],
+      "expected_outputs_document": "labs/09-drawing-edits-ezdxf.md",
+      "toolchain_lock": "labs/dxf/requirements.txt",
+      "fixture_provenance": "synthetic course-authored; no customer material",
+      "fixture_license": "existing course copyright; no license change",
+      "cleanup": "Generated scratch/ outputs and .toolchain/venv-dxf are git-ignored and disposable; the fixture labs/dxf/station-a.dxf is never modified by the tools.",
+      "verification": {
+        "native_execution": true,
+        "human_review": false,
+        "browser_visual_review": false,
+        "learner_review": "none; awaiting JP (see feedback/)",
+        "evidence_kind": "ezdxf text-edit simulation on a synthetic DXF; not opened in any CAD program"
       }
     }
   ],

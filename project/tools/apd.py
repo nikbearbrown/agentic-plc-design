@@ -20,6 +20,7 @@ USAGE = """commands:
   spec SPEC.md CHECKLIST.csv
   log LOG.csv
   vectors                    reference-model test vectors (CSV)
+  dxf ...                    edit a DXF copy with ezdxf (plan by default); needs scripts/dxf_setup.py --apply
 """
 
 
@@ -53,6 +54,13 @@ def main(argv):
             print(b)
         print(design.size_motor_circuit(design.load_toml(rest[0]), tables))
         return 0
+    if cmd == "dxf":
+        import subprocess
+        venv_py = Path(__file__).resolve().parent.parent.parent / ".toolchain" / "venv-dxf" / "bin" / "python"
+        if not venv_py.exists():
+            print("ezdxf environment missing. Run: python3 scripts/dxf_setup.py --apply")
+            return 2
+        return subprocess.run([str(venv_py), str(Path(__file__).resolve().parent / "dxf_edit.py"), *rest]).returncode
     mods = {"lisp": "lisp_gen", "lint": "lisp_lint", "crosscheck": "crosscheck", "l5x": "l5x_check",
             "spec": "spec_check", "log": "log_summary", "vectors": "vectors"}
     if cmd in mods:

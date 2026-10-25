@@ -26,3 +26,13 @@ else
   echo "NOT VERIFIED: compiled labs; run python3 scripts/lab.py build --apply after setup"
   if [ "${REQUIRE_COMPILED:-0}" = "1" ]; then exit 1; fi
 fi
+
+echo "== feedback ledger =="
+python3 scripts/feedback.py check
+if [ -x .toolchain/venv-dxf/bin/python ]; then
+  echo "== DXF drawing-edit tests (ezdxf) =="
+  .toolchain/venv-dxf/bin/python -m unittest discover -s project/tests -p test_dxf.py
+else
+  echo "NOT VERIFIED: DXF lab; run python3 scripts/dxf_setup.py --apply"
+  if [ "${REQUIRE_COMPILED:-0}" = "1" ]; then exit 1; fi
+fi

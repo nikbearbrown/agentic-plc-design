@@ -39,7 +39,7 @@ If you only have an hour a night, do one lab step a night and stop at the "Done 
 
 ## Executable expansion and teaching order
 
-Add about 18–24 hours using [the nine-lab spine](labs/README.md), for roughly 60–75 hours total including the original design work. These are teaching estimates, not measured learner completion times. Insert Lab 00 after orientation; Labs 01–03 alongside Modules 05–06; Lab 04 with incident diagnosis; Labs 05–07 with agent-kit work; and Lab 08 as the synthetic, account-free capstone. The legacy customer-job capstone remains optional and requires company-policy permission.
+Add about 18–24 hours using [the ten-lab spine](labs/README.md), for roughly 60–75 hours total including the original design work. These are teaching estimates, not measured learner completion times. Insert Lab 00 after orientation; Labs 01–03 alongside Modules 05–06; Lab 04 with incident diagnosis; Labs 05–07 with agent-kit work; and Lab 08 as the synthetic, account-free capstone. The legacy customer-job capstone remains optional and requires company-policy permission.
 
 Use the [100-point rubric](labs/08-capstone.md) for a classroom assessment. The original modules' AI Use Disclosures remain required. A passing grade does not sign STATUS gates. The electrical-table and CAD branches remain unverified until reviewed/run by the appropriate human; they do not block the simulation-only spine.
 

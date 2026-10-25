@@ -10,6 +10,8 @@
 
 ---
 
+> **Agent-runnable twin.** If you do not have DraftSight, or want an AI agent to run and prove these edits itself, do [Lab 09: drawing edits with ezdxf](../labs/09-drawing-edits-ezdxf.md). It uses the same plan-then-copy safety pattern in open-source Python on a synthetic DXF. It does not replace running the AutoLISP route in your own CAD program (Gate G3).
+
 ## The idea
 
 AutoLISP is the scripting language built into AutoCAD decades ago; many AutoCAD-compatible programs, including DraftSight in its Professional edition (check your own edition and version), run it. Because it is old, public, and everywhere, AI agents write it well *in the common cases* and badly in the unusual ones.

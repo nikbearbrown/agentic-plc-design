@@ -1,6 +1,6 @@
 ## Executive summary
 
-This is the executable open-source spine of Agentic PLC Design: nine guided labs, real Structured Text compilation, native scan execution, deterministic plant traces, deliberately faulty programs, repairs, assessments and a capstone. It extends the original thirteen modules without replacing their design-document and human-review work. All equipment is simulated. The selected stack needs no paid service, account or secret.
+This is the executable open-source spine of Agentic PLC Design: ten guided labs, real Structured Text compilation, native scan execution, deterministic plant traces, deliberately faulty programs, repairs, assessments and a capstone. It extends the original thirteen modules without replacing their design-document and human-review work. All equipment is simulated. The selected stack needs no paid service, account or secret.
 
 ## Start and pace
 
@@ -17,6 +17,7 @@ Begin with [00 Setup](00-setup.md), then work down the table. Read the [syntheti
 | [06 Two oracles](06-two-oracles.md) | Actual legacy Python/ST discrepancy report | 1.5 | 05, 06 |
 | [07 Agent evidence](07-agent-evidence.md) | Review packet and independent learner handoff | 2 | 08, 10 |
 | [08 Capstone](08-capstone.md) | Synthetic end-to-end submission, rubric | 4–6 | 11 |
+| [09 Drawing edits (ezdxf)](09-drawing-edits-ezdxf.md) | Plan, copy-only apply and verification of title-block, rating and wire-label edits on a synthetic DXF; device extract cross-checked against the design | 2 | 03, 04 |
 
 ## What actually executes
 

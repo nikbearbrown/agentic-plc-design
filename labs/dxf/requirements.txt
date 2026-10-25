@@ -1,0 +1,8 @@
+# Pinned versions installed into .toolchain/venv-dxf by scripts/dxf_setup.py.
+# Versions recorded 2026-10-25 from the install that the lab was tested with (Python 3.14.6, macOS arm64).
+# Version-pinned, NOT hash-pinned: pip does not verify hashes here. All five are open source.
+ezdxf==1.4.5
+fonttools==4.67.0
+numpy==2.5.4
+pyparsing==3.3.3
+typing_extensions==4.16.0

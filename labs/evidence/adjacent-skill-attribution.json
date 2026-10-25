@@ -1,0 +1,94 @@
+{
+  "systematic-debugging": [
+    {
+      "repo": "obra/superpowers",
+      "path": "skills/systematic-debugging/SKILL.md",
+      "commit": "44c9b2d6e889982ac18c27d05a19fefe335194e1",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Jesse Vincent",
+      "sha256": "808fc5717aa88ad65efff312b11c186294d3e6ee301afb584e2f86599b137787",
+      "role": "Primary basis",
+      "url": "https://github.com/obra/superpowers/blob/44c9b2d6e889982ac18c27d05a19fefe335194e1/skills/systematic-debugging/SKILL.md",
+      "took": "the rule (no fix without a root cause), the four phases, instrumenting component boundaries, the three-failed-fixes-means-question-the-design rule, the red-flags list, the excuses table and the quick reference."
+    },
+    {
+      "repo": "phmatray/ai-migration-kit",
+      "path": "skills/systematic-debugging/SKILL.md",
+      "commit": "d84cb9774909e885529047fd82821fa16740a0f0",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 Philippe Matray",
+      "sha256": "3a6022d758b31ffc7cab1052150dc40a90fb3eefd28f56d451df4ddf9a8a4dda",
+      "role": "Structure and wording",
+      "url": "https://github.com/phmatray/ai-migration-kit/blob/d84cb9774909e885529047fd82821fa16740a0f0/skills/systematic-debugging/SKILL.md",
+      "took": "the framing that a symptom fix hides the cause, the sharper trigger description with an explicit \"not for\" clause, the point that \"I don't understand yet\" is the correct starting state, the \"no single cause is a legitimate result, but check you did not stop early\" section, and the list of companion techniques (tracing, defense in depth, condition-based waiting, bisecting for a polluting test)."
+    },
+    {
+      "repo": "lsy041015/orchestra",
+      "path": "skills/systematic-debugging/SKILL.md",
+      "commit": "d23927aa31b1fcd1e2b2c2ac44c5e53136e27dc5",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Jesse Vincent",
+      "sha256": "752218c69415603cb4eb047d800675e0f47588142a21f622a94b0cd842395a7c",
+      "role": "Added idea",
+      "url": "https://github.com/lsy041015/orchestra/blob/d23927aa31b1fcd1e2b2c2ac44c5e53136e27dc5/skills/systematic-debugging/SKILL.md",
+      "took": "when you were handed the work, report blocked with the evidence instead of making a fourth attempt."
+    }
+  ],
+  "test-driven-development": [
+    {
+      "repo": "obra/superpowers",
+      "path": "skills/test-driven-development/SKILL.md",
+      "commit": "44c9b2d6e889982ac18c27d05a19fefe335194e1",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Jesse Vincent",
+      "sha256": "bf1b8216e523851a411e91d429a7c1c2a173e79d88957bc78e348218d50edd54",
+      "role": "Primary basis",
+      "url": "https://github.com/obra/superpowers/blob/44c9b2d6e889982ac18c27d05a19fefe335194e1/skills/test-driven-development/SKILL.md",
+      "took": "the core rule (\"no production code without a failing test first\"), the red-green-refactor cycle with good and bad examples, the verify-red and verify-green steps, the excuses table, the red-flags list, the checklist and the \"when stuck\" table. Every other source in this family reads as a copy, translation, adaptation or rewrite of it."
+    },
+    {
+      "repo": "leobbaroni/cockpit",
+      "path": "skills/test-driven-development/SKILL.md",
+      "commit": "67ad0773258f64a5e4a1bdbc0c3e7d757fc4fa84",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 leobbaroni",
+      "sha256": "efd725d490f62d41157a714eef8fe24c3ad55430188b063af670cc4f13144dc2",
+      "role": "Added ideas",
+      "url": "https://github.com/leobbaroni/cockpit/blob/67ad0773258f64a5e4a1bdbc0c3e7d757fc4fa84/skills/test-driven-development/SKILL.md",
+      "took": "why the failure matters, the \"right reason\" test for a red, the bug-fix-starts-with-a-test argument, the table of what actually proves a claim, and the rule that the iron law binds delegated work."
+    },
+    {
+      "repo": "j0hanz/squad-agents",
+      "path": "skills/test-driven-development/SKILL.md",
+      "commit": "af44079009dd3f21dc2f4fd3c18807b0d2978d73",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2026 j0hanz",
+      "sha256": "d1e03bf250642050660e4c4a263289379cdebad0ae4e57fd05a2944de47d0e3a",
+      "role": "Added ideas",
+      "url": "https://github.com/j0hanz/squad-agents/blob/af44079009dd3f21dc2f4fd3c18807b0d2978d73/skills/test-driven-development/SKILL.md",
+      "took": "the revert check (revert the implementation, expect red, restore, expect green), spikes must be thrown away and rebuilt through the cycle, never edit a test only to force a pass, and one full cycle before the next test."
+    },
+    {
+      "repo": "thoughtbot/rails-consultant",
+      "path": "skills/test-driven-development/SKILL.md",
+      "commit": "9807306250b2fa86886568be3a6d40cefabe5b4a",
+      "license": "MIT",
+      "copyright": "Copyright (c) Steve Polito and thoughtbot, inc.",
+      "sha256": "03dcf33a19b910d73c7e4e21c6ae70958dfe7f847404cc0340d595af5ce20507",
+      "role": "Added ideas",
+      "url": "https://github.com/thoughtbot/rails-consultant/blob/9807306250b2fa86886568be3a6d40cefabe5b4a/skills/test-driven-development/SKILL.md",
+      "took": "outside-in development: one change then one run, drop down a layer by writing the next failing test, and build inert glue directly. Kept framework-neutral; the Rails and RSpec specifics were left out."
+    },
+    {
+      "repo": "lsy041015/orchestra",
+      "path": "skills/test-driven-development/SKILL.md",
+      "commit": "d23927aa31b1fcd1e2b2c2ac44c5e53136e27dc5",
+      "license": "MIT",
+      "copyright": "Copyright (c) 2025 Jesse Vincent",
+      "sha256": "3ec82745523c425e190211b5a8ef97e9c2be38f89e54273d4f844a939ea4dcfc",
+      "role": "Added ideas",
+      "url": "https://github.com/lsy041015/orchestra/blob/d23927aa31b1fcd1e2b2c2ac44c5e53136e27dc5/skills/test-driven-development/SKILL.md",
+      "took": "the safety rule against deleting the user's own work, \"report the evidence gap instead of claiming test-first\", and the two cases where a failing test is the wrong tool (behavior-preserving refactors, docs and config)."
+    }
+  ]
+}

@@ -33,7 +33,7 @@ A test that recomputes the entire control algorithm using identical code can rep
 3. Reset at high level. R7 permits a first-scan start; the timer begins again. Explain why this is a classroom policy requiring human review for a real installation.
 4. Add a case where no pump is available before the lag timer completes, then availability returns. The test suite already checks timer reset; explain the expected 5000 ms interval from the return scan.
 
-Ask the agent to write scenario copies in `scratch/`, not change the contract to fit outputs. If it finds ambiguity, record `CANNOT-DETERMINE` and ask the human to decide before implementing behavior.
+Ask the agent to write scenario copies in `scratch/`, not change the contract to fit outputs. Input names must match the ten declared names exactly; unknown keys, levels outside integer 0–4, and values other than Boolean or integer 0/1 are rejected before native execution. If it finds ambiguity, record `CANNOT-DETERMINE` and ask the human to decide before implementing behavior.
 
 ## Agent prompt
 

@@ -37,6 +37,6 @@ MatIEC is a real IEC language compiler. The course harness invokes compiled func
 - [BearBrown PLC workflow inventory](../reference/bearbrown-plc-inventory.md)
 - [Machine-readable manifest](manifest.json): content IDs, paths, prerequisites, execution kind and status
 
-The reference implementations are `plc/foundations.st`, `plc/station.st`, `runtime/harness.c` and `scripts/lab.py` at repository root. `scenarios/` contains hand-specified JSON expected values. `evidence/` stores selected real outputs; complete generated builds stay in ignored `build/`.
+The reference implementations are `labs/plc/foundations.st`, `labs/plc/station.st`, `labs/runtime/harness.c` and `scripts/lab.py` at repository root. `scenarios/` contains hand-specified JSON expected values. `evidence/` stores selected real outputs; complete generated builds stay in ignored `build/`.
 
 No commercial CAD tool is required for this spine. The original DraftSight exercise remains an optional, written-not-run branch of the wider course. No electrical-code adoption or verification is implied by executing software tests.

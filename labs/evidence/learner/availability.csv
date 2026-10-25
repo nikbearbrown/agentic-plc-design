@@ -1,0 +1,6 @@
+ms,p1_run,p2_run,high_alarm,invalid_alarm,no_pump_alarm,lead,demand,lag_latched
+0,1,0,0,0,0,1,1,0
+4900,0,0,0,0,1,1,1,0
+5000,1,0,0,0,0,1,1,0
+9999,1,0,0,0,0,1,1,0
+10000,1,1,0,0,0,1,1,1

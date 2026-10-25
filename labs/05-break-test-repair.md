@@ -6,7 +6,7 @@ Prove the tests can reject wrong compiled logic. Build three deliberate faults o
 
 A *mutation* is a small planted code defect. If the tests still pass, either the defect is harmless under the contract or the suite is missing a case. A test suite that never rejects anything is weak evidence.
 
-Three mutations are supplied: ignore pump 1 health, set lag delay to zero, and keep pump 1 as lead every cycle. They are made only in `build/<mutation>/combined.st`. Source files remain unchanged.
+Three mutations are supplied: ignore pump 1 health, set lag delay to zero, and keep pump 1 as lead every cycle. They are made only in `build/reference/mutants/<mutation>/combined.st`. Source files remain unchanged.
 
 ## Predict and execute
 

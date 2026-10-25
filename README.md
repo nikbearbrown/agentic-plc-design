@@ -1,5 +1,7 @@
 # Agentic PLC Design
 
+**By JP Brown, Seth Brown and Nik Bear Brown**
+
 ## Executive summary
 
 **What this is.** A hands-on course for people who already build and test control panels and want to direct AI coding agents (Claude Code, Codex and their successors) to do the repetitive engineering around them: drawing edits, I/O lists, bills of materials, test plans, PLC logic, spec reviews and field troubleshooting. You do not need to be a programmer. You need to know what a correct duplex lift station panel looks like, because that knowledge is the one thing the agent does not have and cannot check for itself.
@@ -10,7 +12,7 @@
 
 **What it does not do.** It does not replace a licensed engineer, a code book, a UL 508A listing process or a commissioning visit. Every reference table in the repo is marked UNVERIFIED until *you* check it against your code book and sign it. Nothing here has been run against a live panel, a real PLC or a real DraftSight install by the author; each module says what has been tested and what is waiting for you.
 
-**Who built it.** This is an AI+1 course: an AI agent did the drafting and building, and the +1, the human expert, decides what is true and signs every gate. See `STATUS.md` for which gates are signed (none yet) and `AI1.md` in the `ai1-cli` book for the rules.
+**Who built it.** Written by JP Brown, Seth Brown and Nik Bear Brown as an AI+1 course: an AI agent did the drafting and building, and the +1, the human expert, decides what is true and signs every gate. See `STATUS.md` for which gates are signed (none yet) and `AI1.md` in the `ai1-cli` book for the rules.
 
 ---
 
@@ -63,7 +65,7 @@ The control code is translated by MatIEC and compiled to native machine code. A 
 | 11 | [Capstone: a new job](modules/11-capstone-a-new-job.md) | A real job through the whole workflow |
 | 12 | [Staying current](modules/12-staying-current.md) | Judging new tools and vendor claims |
 
-Three real tools from the wild, written up against the course's rules, are in [case-studies/](case-studies/README.md): a Siemens TIA Portal MCP server, a TIA Portal skills plugin, and a Beckhoff TwinCAT agent. Read them after Module 12, or earlier as a preview of what you will be judging.
+Finish with [four end-of-course case studies](case-studies/README.md): a Siemens TIA Portal MCP server, a TIA Portal skills plugin, a Beckhoff TwinCAT agent, and an adjacent testing/debugging workflow from BearBrown. Each has a local executable adaptation using the course labs; the vendor tools themselves remain NOT VERIFIED. Read them after the capstone and Module 12.
 
 See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md](AGENTS.md) for the standing rules every agent in this repo follows, and [reference/](reference/) for the lift-station primer, glossary, an honest AI-exposure map, and a cheat sheet for Claude Code and Codex.
 
@@ -82,7 +84,7 @@ See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md]
 | `project/samples/` | Synthetic specs, extracts, logs and an AI-written risky script, each with planted errors |
 | `project/tests/` | The test suite |
 | `.claude/` | A skill, a reviewer subagent and a hook, as worked examples for Module 10 |
-| `case-studies/` | Three public agentic PLC tools read against the course rules (nothing installed or run) |
+| `case-studies/` | Three direct PLC-tool studies plus an adjacent repair workflow; local lab adaptations executed, vendor tools not run |
 | `reference/` | Primer, glossary, exposure map, tool-intake checklist, CLI cheat sheet |
 
 ## Requirements

@@ -17,10 +17,16 @@ Only a human signs a gate. An agent that writes initials here has broken the rul
 | G5 Lesson accuracy | I read each module and corrected anything a working panel builder would call wrong | _unsigned_ | |
 | G6 Release | I authorize sharing this course beyond myself | _unsigned_ | |
 
-## Build record (2026-10-25)
+## Initial draft build record (2026-10-25, before executable expansion)
 
 - Tests: 31 pass; the flawed controller fails 3 of 12 as designed (`./check.sh`).
 - Generated AutoLISP passes `lisp_lint.py`. Not run in DraftSight.
 - Structured Text: written, not compiled.
 - Synthetic L5X: hand-written, never opened in Studio 5000.
 - Nothing pushed to GitHub. No publishing done.
+
+## Executable expansion record (2026-10-25; no gate signatures)
+
+The original Structured Text was subsequently compiled unchanged by MatIEC and executed through a local course C scan harness. Two pump-output timing differences from the old Python model were observed in 37 vector rows; no vendor-runtime equivalence is claimed. New starter, timer/counter/edge and duplex examples, deterministic toy-plant tests and compiled mutation tests are documented in [labs/VERIFICATION.md](labs/VERIFICATION.md).
+
+All gates above remain **unsigned**. No OpenPLC, Beremiz runtime/IDE, DraftSight, Studio 5000 or real hardware was run. The original build record is preserved as history, not as the current compilation status. This expansion is local and has not been pushed or deployed by this task.

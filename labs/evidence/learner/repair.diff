@@ -1,0 +1,11 @@
+--- scratch before
++++ scratch repaired
+@@ -33,7 +33,7 @@
+ IF previous_demand AND NOT demand AND NOT invalid_alarm THEN
+   IF lead = 1 THEN lead := 2; ELSE lead := 1; END_IF;
+ END_IF;
+-delay(IN := demand AND fs3_lag AND (available1 OR available2), PT := T#0s);
++delay(IN := demand AND fs3_lag AND (available1 OR available2), PT := T#5s);
+ IF NOT demand THEN
+   lag_latched := FALSE;
+ ELSIF delay.Q THEN

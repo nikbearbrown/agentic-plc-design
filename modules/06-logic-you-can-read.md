@@ -111,12 +111,12 @@ Here is a Structured Text function block for duplex lift station pump control. I
 Setup: use the copy-only repair workflow in [Lab 05](../labs/05-break-test-repair.md). The following legacy vendor-error prompt applies only if you independently have a permitted vendor simulator and recorded its exact diagnostics; it is not the default executable path.
 
 ```
-Read AGENTS.md. Read project/plc/lead_lag.st and scratch/compile-errors.txt, which has the exact errors OpenPLC Editor reported when I compiled it. Do not run any PLC tools; you cannot. For each error, tell me (a) which line it refers to, (b) what you think the cause is and how sure you are, and (c) the smallest change that would fix it. Do not apply any change yet. After I approve, apply only the approved changes to project/plc/lead_lag.st, and record each change in project/plc/CHANGES.md with the error text it addresses. Do not change the logic of the program. If a fix would change behaviour, flag it and wait. State clearly at the end that you have not compiled or run the result.
+Read AGENTS.md. Read project/plc/lead_lag.st and scratch/compile-errors.txt, which has the exact errors OpenPLC Editor reported when I compiled it. Do not run any PLC tools; you cannot. For each error, tell me (a) which line it refers to, (b) what you think the cause is and how sure you are, and (c) the smallest change that would fix it. Do not apply any change yet. After I approve, create a copy at scratch/lead_lag-repair.st and apply only the approved changes to that copy; record each change in scratch/st-repair-notes.md with the error text it addresses. Do not change the logic of the program. If a fix would change behaviour, flag it and wait. State clearly at the end that you have not compiled or run the result.
 ```
 
 **Expected:** a table of errors with causes and minimal fixes; after approval, a small diff and a `CHANGES.md`.
 **Inspect:** compare each diff hunk to the error it claims to address. Re-compile yourself. If new errors appear, repeat.
-**If it goes wrong:** the main risk is the agent "fixing" a compile error by changing logic. `git diff project/plc/lead_lag.st` should show only syntax-shaped changes. A behaviour change must be a separate, visible decision.
+**If it goes wrong:** the main risk is the agent "fixing" a compile error by changing logic. A comparison of the scratch copy with `project/plc/lead_lag.st` should show only syntax-shaped changes. A behaviour change must be a separate, visible decision.
 **Standing rule:** *"A fix to make code compile must not change what it does. Behaviour changes are separate."*
 
 ### 5 — AI validation exercise

@@ -56,11 +56,11 @@ The four thresholds are 10000, 40000, 65000 and 85000 mL. These are invented tea
 
 | Requirement | Reference implementation | Evidence |
 |---|---|---|
-| R1 | `runtime/harness.c` line protocol | timestamps and CSV replay |
-| R2 | `plc/station.st` availability / invalid input | 1024 fresh input combinations + fault traces |
-| R3–R4 | `plc/station.st` demand / lead | cycle replay, fallback, alternation mutant |
-| R5 | MatIEC TON called by `plc/station.st` | before/at/after deadline, chatter, outage reset, instant-lag mutant |
-| R6 | `plc/station.st` alarm assignments | high/invalid/no-pump assertions |
+| R1 | `labs/runtime/harness.c` line protocol | timestamps and CSV replay |
+| R2 | `labs/plc/station.st` availability / invalid input | 1024 fresh input combinations + fault traces |
+| R3–R4 | `labs/plc/station.st` demand / lead | cycle replay, fallback, alternation mutant |
+| R5 | MatIEC TON called by `labs/plc/station.st` | before/at/after deadline, chatter, outage reset, instant-lag mutant |
+| R6 | `labs/plc/station.st` alarm assignments | high/invalid/no-pump assertions |
 | R7 | function block initialization in harness | cold-reset assertion |
 | R8 | `scripts/lab.py` plant function | repeated identical CSVs, spill scenario |
 

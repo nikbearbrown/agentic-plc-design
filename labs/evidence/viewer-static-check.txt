@@ -1,0 +1,4 @@
+Executed: Python CSV/embedded JSON equality check and node --check build/reference/viewer-script.js
+Result: 1800 embedded rows equal the actual plant CSV; no external resource URLs or fetch calls; JavaScript syntax check exit 0.
+NOT VERIFIED: browser rendering, slider/button interactions, layout, accessibility.
+Browser attempt denied: IAB file:///Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/plant.html; URL policy permits only http/https. No workaround or alternate surface attempted.

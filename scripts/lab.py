@@ -118,8 +118,16 @@ class Native:
 
 
 def inputs(level=0, **overrides):
+    if type(level) is not int or not 0 <= level <= 4:
+        raise ValueError('level must be an integer from 0 through 4')
+    unknown = set(overrides) - set(INPUTS)
+    if unknown:
+        raise ValueError('Unknown input keys: ' + ', '.join(sorted(unknown)))
+    for key, value in overrides.items():
+        if type(value) not in (int, bool) or value not in (0, 1):
+            raise ValueError(f'{key} must be Boolean or integer 0/1')
     values = dict(zip(INPUTS, [int(level >= n) for n in range(1,5)] + [1,1,0,0,0,0]))
-    values.update(overrides)
+    values.update({key:int(value) for key,value in overrides.items()})
     return [values[k] for k in INPUTS]
 
 
@@ -217,15 +225,16 @@ def plant(build_dir, output, fault='none', scans=1800):
             if active and fault == 'pump1-trip': extra['p1_overtemp'] = 1
             if active and fault == 'both-trip': extra.update(p1_overtemp=1,p2_overtemp=1)
             if active and fault == 'bad-float': extra['fs1_off'] = 0
-            command = n.scan(inputs(level, **extra), ms=t, reset=k==0)
+            sensed = inputs(level, **extra)
+            command = n.scan(sensed, ms=t, reset=k==0)
             inflow = 450 if 600 <= k < 1100 else 120
             pumped = 300 * (command[0]+command[1])
             # A blocked pump has no feedback in this controller. Show the missing requirement.
             if active and fault == 'blocked-pump1': pumped -= 300*command[0]
             next_volume = max(0,volume+inflow-pumped)
             spilled = max(0,next_volume-100000); overflow += spilled
-            rows.append({'ms':t,'volume_ml':volume, 'fs1':int(level>=1),'fs2':int(level>=2),
-                'fs3':int(level>=3),'fs4':int(level>=4), **dict(zip(OUTPUTS,command)),
+            rows.append({'ms':t,'volume_ml':volume,'physical_level_index':level,
+                **dict(zip(INPUTS,sensed)), **dict(zip(OUTPUTS,command)),
                 'inflow_ml_per_scan':inflow,'pumped_ml_per_scan':pumped,'spill_ml':spilled})
             volume = min(100000,next_volume)
     save_csv(output, rows)
@@ -256,7 +265,10 @@ def compare_original(build_dir, output):
     mismatches = [r for r in rows if not r['pump_match']]
     print(f'OBSERVED original comparison: {len(rows)} rows, {len(mismatches)} pump-output differences -> {output}')
     for row in mismatches: print(json.dumps(row))
-    assert len(mismatches) == 2, 'Changed baseline behavior: inspect, do not bless automatically'
+    observed = {(r['scenario'].split()[0],r['t_s'],r['python_p1'],r['python_p2'],
+                 r['compiled_p1'],r['compiled_p2']) for r in mismatches}
+    expected = {('T02',5,1,1,1,0), ('T07',5,1,1,1,0)}
+    assert observed == expected, ('Changed baseline differences: inspect, do not bless automatically', observed)
     print('Alarm sets are NOT equivalent: original ST exposes only 3 aggregate alarms; Python has individual trip alarms.')
 
 
@@ -270,6 +282,11 @@ def test_all(build_dir):
     assert rows == again, 'non-deterministic plant trace'
     _, failed = plant(build_dir, build_dir/'both-trip.csv','both-trip')
     assert failed['spill_ml'] > 0 and failed['high_alarm_scans'] > 0 and failed['no_pump_alarm_scans'] > 0
+    fault_rows,_ = plant(build_dir, build_dir/'bad-float.csv','bad-float')
+    for k,row in enumerate(fault_rows):
+        assert row['fs1_off'] == (0 if 400 <= k < 900 else int(row['physical_level_index'] >= 1))
+        sensed_invalid = any(row[INPUTS[j]] and not row[INPUTS[j-1]] for j in (1,2,3))
+        assert row['invalid_alarm'] == int(sensed_invalid), ('trace input/output mismatch', k, row)
     compare_original(build_dir,build_dir/'original-comparison.csv')
     print('PASS all compiled labs (includes known original-model discrepancy, not equivalence)')
 
@@ -299,10 +316,10 @@ def main():
     elif args.command == 'plant': plant(out,args.output or out/'plant.csv',args.fault)
     elif args.command == 'mutations':
         if not args.apply:
-            print('DRY RUN: would build and test 3 deliberately faulty copies under build/. Use --apply.')
+            print(f'DRY RUN: would build and test 3 deliberately faulty copies under {out}/mutants/. Use --apply.')
             return
         for mutant in MUTANTS:
-            folder = ROOT/'build'/mutant
+            folder = out/'mutants'/mutant
             build(folder,True,mutant)
             try: station_tests(folder)
             except AssertionError as e: print('KILLED',mutant,repr(e))

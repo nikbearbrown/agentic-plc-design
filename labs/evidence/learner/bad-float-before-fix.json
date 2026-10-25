@@ -1,0 +1,19 @@
+{
+  "ms": "58500",
+  "volume_ml": "40100",
+  "fs1": "1",
+  "fs2": "1",
+  "fs3": "0",
+  "fs4": "0",
+  "p1_run": "0",
+  "p2_run": "0",
+  "high_alarm": "0",
+  "invalid_alarm": "1",
+  "no_pump_alarm": "0",
+  "lead": "2",
+  "demand": "0",
+  "lag_latched": "0",
+  "inflow_ml_per_scan": "120",
+  "pumped_ml_per_scan": "0",
+  "spill_ml": "0"
+}

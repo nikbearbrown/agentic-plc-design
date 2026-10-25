@@ -1,5 +1,5 @@
 #!/bin/sh
-# Runs every check in the repo. Exit 0 = all pass. Safe: reads files, writes nothing.
+# Runs original tests plus executable-course checks. Writes temporary lint output and simulation traces only.
 set -e
 cd "$(dirname "$0")/project"
 echo "== unit tests (correct controller) =="
@@ -15,3 +15,14 @@ TMP="$(mktemp)"
 python3 tools/lisp_gen.py variants/a-baseline.toml --swap "7.5 HP=10 HP" > "$TMP"
 python3 tools/lisp_lint.py lisp/apd-lib.lsp "$TMP"
 rm -f "$TMP"
+
+cd ..
+echo "== course links, manifest and native protocol =="
+python3 scripts/check_course.py
+if [ -x build/reference/plc-sim ]; then
+  echo "== actual compiled ST and deterministic plant =="
+  python3 scripts/lab.py test
+else
+  echo "NOT VERIFIED: compiled labs; run python3 scripts/lab.py build --apply after setup"
+  if [ "${REQUIRE_COMPILED:-0}" = "1" ]; then exit 1; fi
+fi

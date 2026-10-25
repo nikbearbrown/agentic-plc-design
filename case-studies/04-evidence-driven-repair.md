@@ -26,3 +26,7 @@ Actual local execution is in [VERIFICATION.md](../labs/VERIFICATION.md), with th
 ## Your turn
 
 Propose a fourth mutation and its smallest counterexample before changing a copied program. If the current tests miss it, add a requirement-backed test, observe failure, then repair the copy and rerun. Record whether the defect was a missing requirement, a code bug, or a weak test. Do not add production features merely to increase the number of tests.
+
+## Attribution trail
+
+BearBrown's catalog identifies [Jesse Vincent's obra/superpowers testing skill](https://github.com/obra/superpowers/blob/44c9b2d6e889982ac18c27d05a19fefe335194e1/skills/test-driven-development/SKILL.md) and [debugging skill](https://github.com/obra/superpowers/blob/44c9b2d6e889982ac18c27d05a19fefe335194e1/skills/systematic-debugging/SKILL.md), MIT, as primary bases for its rewritten protocols. The catalog also records additional sources; see the machine-readable attribution record alongside the inventory. Our exercise is newly written, and no source skill implementation/text is bundled.

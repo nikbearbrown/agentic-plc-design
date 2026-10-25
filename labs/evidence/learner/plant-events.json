@@ -1,0 +1,62 @@
+[
+  {
+    "scenario": "plant",
+    "first_demand_ms": 16700,
+    "first_high_alarm_ms": null,
+    "first_invalid_alarm_ms": null,
+    "first_no_pump_alarm_ms": null,
+    "first_spill_ml_ms": null,
+    "first_lag_latched_ms": 83400,
+    "first_lead2_ms": 33400,
+    "pumped_total_ml": 363300,
+    "commanded_equivalent_ml": 363300
+  },
+  {
+    "scenario": "pump1-trip",
+    "first_demand_ms": 16700,
+    "first_high_alarm_ms": null,
+    "first_invalid_alarm_ms": null,
+    "first_no_pump_alarm_ms": null,
+    "first_spill_ml_ms": null,
+    "first_lag_latched_ms": 83400,
+    "first_lead2_ms": 33400,
+    "pumped_total_ml": 368100,
+    "commanded_equivalent_ml": 368100
+  },
+  {
+    "scenario": "both-trip",
+    "first_demand_ms": 16700,
+    "first_high_alarm_ms": 69600,
+    "first_invalid_alarm_ms": null,
+    "first_no_pump_alarm_ms": 58500,
+    "first_spill_ml_ms": 72900,
+    "first_lag_latched_ms": 95000,
+    "first_lead2_ms": 33400,
+    "pumped_total_ml": 290100,
+    "commanded_equivalent_ml": 290100
+  },
+  {
+    "scenario": "bad-float",
+    "first_demand_ms": 16700,
+    "first_high_alarm_ms": 69600,
+    "first_invalid_alarm_ms": 58500,
+    "first_no_pump_alarm_ms": null,
+    "first_spill_ml_ms": 72900,
+    "first_lag_latched_ms": 95000,
+    "first_lead2_ms": 33400,
+    "pumped_total_ml": 290100,
+    "commanded_equivalent_ml": 290100
+  },
+  {
+    "scenario": "blocked-pump1",
+    "first_demand_ms": 16700,
+    "first_high_alarm_ms": null,
+    "first_invalid_alarm_ms": null,
+    "first_no_pump_alarm_ms": null,
+    "first_spill_ml_ms": null,
+    "first_lag_latched_ms": 83400,
+    "first_lead2_ms": 33400,
+    "pumped_total_ml": 368100,
+    "commanded_equivalent_ml": 387900
+  }
+]

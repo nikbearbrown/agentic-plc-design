@@ -1,0 +1,13 @@
+PASS foundations: 8 truth rows, latch/stop precedence, R_TRIG, CTU, TON boundary/reset
+PASS station: cycle, alternation, fallback, faults, restart, 5s boundary, chatter, 1024 input images
+PASS replay cycle.json: 8 scans -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/cycle.csv
+PASS replay timer.json: 7 scans -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/timer.csv
+{"fault": "none", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 72500, "no_pump_alarm_scans": 0, "p1_on_scans": 648, "p2_on_scans": 563, "scans": 1800, "spill_ml": 0}
+{"fault": "none", "high_alarm_scans": 0, "invalid_alarm_scans": 0, "max_volume_ml": 72500, "no_pump_alarm_scans": 0, "p1_on_scans": 648, "p2_on_scans": 563, "scans": 1800, "spill_ml": 0}
+{"fault": "both-trip", "high_alarm_scans": 355, "invalid_alarm_scans": 0, "max_volume_ml": 100000, "no_pump_alarm_scans": 315, "p1_on_scans": 626, "p2_on_scans": 341, "scans": 1800, "spill_ml": 84400}
+{"fault": "bad-float", "high_alarm_scans": 355, "invalid_alarm_scans": 315, "max_volume_ml": 100000, "no_pump_alarm_scans": 0, "p1_on_scans": 626, "p2_on_scans": 341, "scans": 1800, "spill_ml": 84400}
+OBSERVED original comparison: 37 rows, 2 pump-output differences -> /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design/build/reference/original-comparison.csv
+{"scenario": "T02 lag joins after 5 s", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+{"scenario": "T07 high level", "t_s": 5, "python_p1": 1, "python_p2": 1, "compiled_p1": 1, "compiled_p2": 0, "pump_match": 0}
+Alarm sets are NOT equivalent: original ST exposes only 3 aggregate alarms; Python has individual trip alarms.
+PASS all compiled labs (includes known original-model discrepancy, not equivalence)

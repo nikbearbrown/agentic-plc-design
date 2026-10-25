@@ -23,7 +23,7 @@ python3 scripts/view_trace.py build/reference/plant.csv --output build/reference
 
 The first command writes 1800 rows (180 simulated seconds), prints counts and spill, and writes a JSON summary. The second creates an offline HTML viewer. Ask the agent to open the generated file and inspect it with you. The viewer is a replay of recorded native-controller outputs; it cannot change I/O or connect to equipment. It uses no external scripts, server, CDN or account.
 
-Read the first demand onset, first drained cycle, lead change and lag join. Use the time slider to compare volume, float image, pump commands and alarms. Predict which threshold is crossed next. Inspect the raw CSV whenever the picture is uncertain.
+Read the first demand onset, first drained cycle, lead change and lag join. Use the time slider to compare volume, actual sensed input image, pump commands and alarms. `physical_level_index` describes the unfaulted threshold state; `fs1_off` through `fs4_high` and the pump-permission/trip columns record the exact input bits sent to compiled ST after fault injection. Predict which threshold is crossed next. Inspect the raw CSV whenever the picture is uncertain.
 
 ## Faults are experiments on the toy plant only
 

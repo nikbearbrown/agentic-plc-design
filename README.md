@@ -37,7 +37,13 @@ cd agentic-plc-design
 ./check.sh
 ```
 
-That runs 31 tests. It should end with `ok: flawed controller fails as designed` (yes, a test that is *supposed* to fail; Module 5 explains). Then open [modules/00-orientation.md](modules/00-orientation.md).
+That runs the original 31 design tests and the executable-course checks. Start the new hands-on path at [labs/README.md](labs/README.md), beginning with the pinned open-source setup. The original [orientation](modules/00-orientation.md) remains useful for agent and review habits.
+
+## New executable course spine
+
+The course now includes nine detailed labs: native MatIEC setup; scan/state; IEC timers and edges; duplex requirements and tests; closed-loop plant simulation; deliberate compiled faults and repairs; Python-versus-ST discrepancy analysis; agent evidence; and a synthetic capstone with a grading rubric. See [the lab sequence](labs/README.md), [actual verification ledger](labs/VERIFICATION.md), [independent learner report](labs/LEARNER-REPORT.md), and [machine-readable manifest](labs/manifest.json).
+
+The control code is translated by MatIEC and compiled to native machine code. A course C harness supplies deterministic simulated scans; Python drives tests and the toy plant. This is actual ST execution, but it is not OpenPLC, a production PLC runtime or real hardware. No account or paid service is needed for the executable labs.
 
 ## The modules
 
@@ -69,7 +75,9 @@ See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md]
 | `project/variants/` | Three example stations: baseline, VFD with transducer, and a deliberately broken one |
 | `project/tools/` | Python tools (standard library only): rule check, devices, I/O, BOM, sizing, AutoLISP generator and linter, cross-checks, L5X reader, spec checker, log summariser, test vectors |
 | `project/data/` | Reference tables (UNVERIFIED until you sign them) and a generic parts catalog with invented part numbers |
-| `project/plc/` | `lead_lag.st`, Structured Text, uncompiled |
+| `project/plc/` | Original `lead_lag.st`, now compiled unchanged by the new lab harness; legacy timing mismatch preserved |
+| `labs/` | Nine executable labs, synthetic contract, ST examples, scenarios, solutions and evidence |
+| `scripts/` | Pinned local source installer, native compiler/test driver and offline trace viewer |
 | `project/lisp/` | `apd-lib.lsp`, the safe-by-default AutoLISP helpers |
 | `project/samples/` | Synthetic specs, extracts, logs and an AI-written risky script, each with planted errors |
 | `project/tests/` | The test suite |
@@ -81,12 +89,14 @@ See [SYLLABUS.md](SYLLABUS.md) for time estimates and prerequisites, [AGENTS.md]
 
 - A Mac, Windows or Linux computer with Python 3.11 or newer.
 - Claude Code and/or Codex installed (Module 00 walks through checking this). Any agentic CLI works; the prompts are written for Claude Code and carry Codex notes.
-- Optional: DraftSight (Module 4), OpenPLC Editor (Module 6), Studio 5000 or its emulator (Module 6). Every module works without them; they are where the *real* test happens.
+- For the executable spine: Python 3.12+, a working C/C++ toolchain/SDK, Make, Flex, Perl and curl. [Setup](labs/00-setup.md) builds pinned GNU tools and MatIEC locally.
+- Optional legacy branches: DraftSight, OpenPLC Editor, Studio 5000. These have **not** been installed or run here; the new compiled labs do not require them.
 
 ## Honesty ledger
 
 - **Tested here:** the Python tools and the 31 tests; the AutoLISP *generator* and *linter*; the hook script.
-- **Written but not run by the author:** the AutoLISP in `apd-lib.lsp` (no DraftSight install was available), the Structured Text (no compiler available), the synthetic L5X (hand-written, not exported from Studio 5000).
+- **Executed in the expansion:** MatIEC-compiled starter, edge/counter/timer and duplex logic; native test scans; a Python toy plant driven by actual compiled outputs. The original ST was compiled unchanged and has two pump-output differences from its Python oracle across 37 rows. See the detailed ledger.
+- **Written but not run:** the AutoLISP in `apd-lib.lsp`; no DraftSight, OpenPLC or Studio 5000 execution. The synthetic L5X remains hand-written, not a vendor export.
 - **Invented:** every part number, the sample spec, the sample logs, the sample station. Nothing is a real vendor's catalog or a real customer's project.
 - **Unverified:** every number in `project/data/nec-extracts.toml`. See Module 7.
 

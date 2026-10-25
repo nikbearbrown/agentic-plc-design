@@ -73,3 +73,17 @@ Copy `../reference/tool-intake.md` to `scratch/intake-tia-mcp.md`. Pre-filled fr
 ```
 
 Write a two-sentence AI Use Disclosure if an AI helped you answer.
+
+## Executable classroom adaptation — blueprint to checked behavior
+
+The transferable problem is turning a small declarative job description into a reviewable program and evidence. Use the course's synthetic JSON scenario as that description, then build copies and replay them. This exercise runs our MatIEC pipeline, **not the TIA server or its CLI**.
+
+```sh
+python3 scripts/lab.py build
+python3 scripts/lab.py build --apply
+python3 scripts/lab.py replay labs/scenarios/cycle.json --output build/reference/case-tia-blueprint.csv
+```
+
+Read SPEC R3 and quote its demand/alternation requirement. Inspect the eight expected/actual rows. Change a copied scenario's second-cycle pump expectation and watch replay reject it. That is a concrete oracle for generated behavior; a vendor project's successful compile alone would not provide it.
+
+Deliver the reviewed JSON, build receipt and eight-row CSV. The local adaptation is covered by [the execution ledger](../labs/VERIFICATION.md); TIA installation, project generation, vendor compilation and online functions remain **NOT VERIFIED**. Do not install the upstream binary or exercise download/online operations as part of this course.

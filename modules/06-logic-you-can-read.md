@@ -6,7 +6,7 @@
 
 **Why:** vendors now sell agents that go from a written spec to working control logic, and a general agent can draft logic too. Your leverage is not writing it; it is reading it and proving it. You already read ladder schematics; PLC ladder was designed to imitate them, so that skill transfers directly. This module trains you to be the reviewer who catches what the generator cannot see.
 
-**What you leave with:** a process for judging any generated program, a vectors-to-simulator workflow, and a read-only L5X checker. This module has the most "not run by the author" content; it is where your hands matter most. **Gate G4.** Time: about 5 hours.
+**What you leave with:** a process for judging any generated program, a vectors-to-simulator workflow, and a read-only L5X checker. The new native laboratory path below has been executed; vendor IDE/runtime branches remain NOT VERIFIED. **Gate G4.** Time: about 5 hours.
 
 ---
 
@@ -20,7 +20,7 @@ Structured Text (ST) is the text language in the IEC 61131-3 standard. It reads 
 IF lvl >= 2 THEN call := TRUE; ELSIF lvl < 1 THEN call := FALSE; END_IF;
 ```
 
-Open `project/plc/lead_lag.st`. It is the reference model's logic in ST, written by an AI and **never compiled**. You can read it, even if you have never written ST: it is the narrative, line by line. Compare it to `sim.py`; they should say the same thing.
+Open `project/plc/lead_lag.st`. It is the reference model's logic in ST, originally written by an AI without compilation, now compiled unchanged through the [native lab harness](../labs/06-two-oracles.md). Its original status comment is retained as historical provenance. You can read it, even if you have never written ST: it is the narrative, line by line. Compare it to `sim.py`; they should say the same thing.
 
 Studio 5000 supports ST alongside ladder; OpenPLC (free, open source) runs ST on a laptop. You do not need Rockwell hardware to practice. You do need a simulator or emulator to *run* what the agent writes.
 
@@ -46,25 +46,17 @@ This is the same job Rockwell advertises for its AI agents ("compare existing pr
 
 Read `project/plc/lead_lag.st` next to `project/tools/sim.py`. On paper, write the correspondences: *level index* (both), *call latch*, *alternation*, *lead fallback*, *lag timer*. Mark any line you think differs in behaviour. (There is a subtle one about *when* the lag pump turns on relative to the model: think about what a real timer does on the scan it starts, versus the model adding one second per scan. Predict which vector row will differ before you run it.)
 
-### Step 2 — Compile and run it (this part is yours)
+### Step 2 — Use the executable open-source path
 
-1. Install **OpenPLC Editor** (free). Create a project, add a program in Structured Text, paste the function block from `lead_lag.st`, and add a short main program that instantiates `DuplexLeadLag` and maps its inputs and outputs to variables you can force.
-2. Compile. **Record every error exactly.** An AI-written, uncompiled program will have some. Typical culprits: how the editor wants `FUNCTION_BLOCK`/`PROGRAM`/`CONFIGURATION` laid out, whether `TON` is available without an include, and type names.
-3. Fix with the agent's help (CLI exercise below), one error at a time, and keep a log of each change.
+Complete [Lab 00](../labs/00-setup.md), then [Labs 01–03](../labs/README.md). These provide exact setup, real MatIEC compilation, native scan execution and deterministic checks. No vendor IDE, account or paid service is required. The harness is course code, not an OpenPLC runtime.
 
-If you cannot install OpenPLC, use Studio 5000 Logix Emulate if your company has it, or note the blocker in `scratch/g4-notes.md`. A blocker is a valid outcome; a silent skip is not.
+### Step 3 — Observe the legacy comparison
 
-### Step 3 — Run the vectors
+Follow [Lab 06: Two oracles](../labs/06-two-oracles.md). The comparison runs 37 legacy vector rows and exposes two actual pump-command differences at the five-second timer boundary. Preserve the output CSV. Individual alarm coverage also differs; no full equivalence is claimed.
 
-```bash
-python3 project/tools/apd.py vectors > scratch/vectors.csv
-```
+### Step 4 — Review the discrepancy
 
-Open `scratch/vectors.csv`. Each row is one second: the left columns are inputs to force; the `exp_*` columns are what the model says should happen. Force the inputs one scenario at a time in the simulator and record what your program does. Mark each row **match / differs**. Do the first three scenarios by hand; then ask the agent to help you write a way to run the rest (it will probably suggest a small test harness). *You* watch the first run.
-
-### Step 4 — When they differ, decide who is right
-
-Every difference is a decision for you: the program is wrong, the oracle is wrong, or the narrative was silent. Write the verdict beside the row. **Do not let the agent decide which one changes.**
+Decide with the human whether the implementation, the Python model or the narrative's timing convention should change. The course preserves the old files rather than silently declaring a winner. The new compiled Station example follows its separately quoted synthetic contract. OpenPLC Editor and Studio 5000 remain optional platform-transfer investigations: installation, vendor compilation, runtime scheduling and hardware I/O are **NOT VERIFIED**. Do not force or download to real equipment.
 
 ### Step 5 — Check an export
 
@@ -114,9 +106,9 @@ Here is a Structured Text function block for duplex lift station pump control. I
 ### 4 — CLI exercise
 
 **You are building:** a compiled, tested ST program, with an honest log.
-**Tool:** Claude Code. **Level:** advanced; you do the simulator steps yourself.
+**Tool:** any available local agent. **Level:** advanced; the agent can run the native lab tools for you.
 
-Setup: you have tried compiling in OpenPLC and saved the exact error text to `scratch/compile-errors.txt`.
+Setup: use the copy-only repair workflow in [Lab 05](../labs/05-break-test-repair.md). The following legacy vendor-error prompt applies only if you independently have a permitted vendor simulator and recorded its exact diagnostics; it is not the default executable path.
 
 ```
 Read AGENTS.md. Read project/plc/lead_lag.st and scratch/compile-errors.txt, which has the exact errors OpenPLC Editor reported when I compiled it. Do not run any PLC tools; you cannot. For each error, tell me (a) which line it refers to, (b) what you think the cause is and how sure you are, and (c) the smallest change that would fix it. Do not apply any change yet. After I approve, apply only the approved changes to project/plc/lead_lag.st, and record each change in project/plc/CHANGES.md with the error text it addresses. Do not change the logic of the program. If a fix would change behaviour, flag it and wait. State clearly at the end that you have not compiled or run the result.

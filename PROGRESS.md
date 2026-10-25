@@ -13,3 +13,11 @@ The course expansion is being authored on `course/open-source-plc-labs`. The ori
 ## Boundaries
 
 DraftSight, OpenPLC, Studio 5000 and real hardware are NOT VERIFIED. Electrical reference tables remain unverified. Compiled logic in a course scan harness is not a production PLC runtime or a safety certification.
+
+## Checkpoint 2 — native execution and complete lab draft
+
+The pinned installer completed. Actual MatIEC-compiled starter, timer/counter/edge, duplex and legacy programs ran through the native C harness. The station suite exercised 1024 fresh input images plus stateful histories; three compiled mutations were rejected. Normal toy-plant run had zero spill; both-trip produced 84400 mL simulated spill. Legacy comparison found two timing differences in 37 rows. See labs/VERIFICATION.md.
+
+Nine lab documents now live in labs/, with manifest.json, source examples, expected scenarios, solutions and an offline trace viewer. End-of-course case studies include local executable adaptations for three direct PLC tools and an adjacent testing/debugging workflow. BearBrown source audit is recorded under reference/ and labs/evidence/. A concurrently supplied checkpoint commit 8449838 included the first lab files and three case studies; it is preserved.
+
+Next: independent learner run, repairs, browser check, final regression and execution ledger. No hardware, publication or engineering gate signatures.

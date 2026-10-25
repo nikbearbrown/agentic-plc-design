@@ -4,11 +4,11 @@
 
 **What this is.** Three real, public, agentic tools for PLC engineering that appear in the bearbrown.co audited directory, written up as case studies to be read against this course's rules. Two drive Siemens TIA Portal (an MCP server and a Claude Code plugin); one drives Beckhoff TwinCAT. They are exactly the kind of tool the course is preparing you to judge.
 
-**Why read it.** These tools already exist and are what "Rockwell, Siemens and others will ship agents" looks like in practice from the open-source side. Reading them with the course's questions (what does it write, what stops it writing something dangerous, how would I know it was wrong) is the quickest way to practice Module 12's tool-intake habit on real products.
+**Why read it.** These tools already exist and are what "Rockwell, Siemens and others will ship agents" looks like in practice from third-party tool authors (with different license terms). Reading them with the course's questions (what does it write, what stops it writing something dangerous, how would I know it was wrong) is the quickest way to practice Module 12's tool-intake habit on real products.
 
 **What we found.**
 - bearbrown.co's catalog has **only three** PLC-design entries out of about 1,650 audited. All three carry the grade `CLEARED_STATIC`, which on that site means automated static checks passed and **no behavioural testing was done**. Their receipts (commit, date, sandbox) are empty in the catalog.
-- **Nothing in the catalog covers the stack this course is built around**: Rockwell Studio 5000, Motorola ACE3600/MOSCAD, or DraftSight/AutoLISP. The course's own tools fill that gap, and that is the honest reason to treat them as a worked example rather than a finished product.
+- **The direct catalog entries target Siemens and Beckhoff.** The executable course now uses MatIEC with a local C scan harness; vendor-specific integrations are separate investigations, not prerequisites.
 - The audit snapshots are **stale for at least one entry**: `totally-integrated-claude` was audited at v4.3.2 on 2026-08-07; upstream is at v4.6.x. A claim in the audit snapshot (a write-confirmation hook) is not in the current README.
 - Write safety differs a lot between tools, and the difference is the lesson: one leaves it "up to your client," one says it blocks writes without a server-issued token (in the older snapshot), one describes "safe" workflows without showing how.
 
@@ -56,3 +56,9 @@ Rockwell Studio 5000 and FactoryTalk Design Studio agents, Siemens' own announce
 - bearbrown.co catalog entries (`data/catalog/audit-entries.json`, ids `TechIndustryX__twincat-agent`, `bulaofen0036-coder__tia_portal_openness_mcp`, `czarnak__totally-integrated-claude`) and the site's Corpus page for what `CLEARED_STATIC` means.
 - Upstream repositories and their READMEs, read 2026-10-25: github.com/bulaofen0036-coder/TIA_Portal_Openness_MCP, github.com/Czarnak/totally-integrated-claude, github.com/TechIndustryX/twincat-agent.
 - Repository figures (stars, push dates) are from the GitHub API on the same day and change daily.
+
+## End-of-course executable case-study sequence
+
+After [Lab 08 capstone](../labs/08-capstone.md), complete the local adaptation appended to each direct case above, then [Case 4: evidence-driven repair](04-evidence-driven-repair.md). The first three are direct PLC-domain tools; the fourth uses adjacent general testing/debugging skills. The local adaptations run this course's own compiler and harness, not those vendor products. All vendor execution remains NOT VERIFIED.
+
+See the [read-only source inventory](../reference/bearbrown-plc-inventory.md) for exact BearBrown file paths, search scope, source revision and license distinctions. Selected actual execution output lives in `labs/evidence/`; the [ledger](../labs/VERIFICATION.md) distinguishes read-only research from executed lab adaptations.

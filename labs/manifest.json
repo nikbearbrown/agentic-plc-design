@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "title": "Agentic PLC Design \u2014 executable lab spine",
+  "simulation_only": true,
+  "human_gates": "unsigned",
+  "source_commit": "see git revision and labs/VERIFICATION.md",
+  "labs": [
+    {
+      "id": "lab-00",
+      "title": "Setup",
+      "path": "labs/00-setup.md",
+      "prerequisites": [],
+      "execution_kind": "compiled_st",
+      "status": "verification-in-progress",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-01",
+      "title": "Scan and state",
+      "path": "labs/01-scan-and-state.md",
+      "prerequisites": [
+        "lab-00"
+      ],
+      "execution_kind": "compiled_st",
+      "status": "author-executed",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-02",
+      "title": "Timers and edges",
+      "path": "labs/02-timers-and-edges.md",
+      "prerequisites": [
+        "lab-01"
+      ],
+      "execution_kind": "compiled_st",
+      "status": "author-executed",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-03",
+      "title": "Duplex contract",
+      "path": "labs/03-duplex-contract.md",
+      "prerequisites": [
+        "lab-02"
+      ],
+      "execution_kind": "compiled_st",
+      "status": "author-executed",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-04",
+      "title": "Closed-loop plant",
+      "path": "labs/04-closed-loop-plant.md",
+      "prerequisites": [
+        "lab-03"
+      ],
+      "execution_kind": "compiled_st_with_python_plant",
+      "status": "author-executed",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-05",
+      "title": "Break, test, repair",
+      "path": "labs/05-break-test-repair.md",
+      "prerequisites": [
+        "lab-04"
+      ],
+      "execution_kind": "compiled_st",
+      "status": "verification-in-progress",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-06",
+      "title": "Two oracles",
+      "path": "labs/06-two-oracles.md",
+      "prerequisites": [
+        "lab-05"
+      ],
+      "execution_kind": "compiled_st_vs_python_model",
+      "status": "author-executed",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-07",
+      "title": "Agent evidence",
+      "path": "labs/07-agent-evidence.md",
+      "prerequisites": [
+        "lab-06"
+      ],
+      "execution_kind": "workflow",
+      "status": "verification-in-progress",
+      "evidence": "labs/VERIFICATION.md"
+    },
+    {
+      "id": "lab-08",
+      "title": "Capstone",
+      "path": "labs/08-capstone.md",
+      "prerequisites": [
+        "lab-07"
+      ],
+      "execution_kind": "integrated_simulation",
+      "status": "verification-in-progress",
+      "evidence": "labs/VERIFICATION.md"
+    }
+  ]
+}

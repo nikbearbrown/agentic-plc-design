@@ -77,3 +77,16 @@ Copy `../reference/tool-intake.md` to `scratch/intake-totally-integrated-claude.
 ```
 
 Write a two-sentence AI Use Disclosure if an AI helped you answer.
+
+## Executable classroom adaptation — context before conclusions
+
+The actual upstream [PLC code-analysis skill](https://github.com/Czarnak/totally-integrated-claude/blob/main/skills/plc-code-analysis/SKILL.md) distinguishes supplied code from missing declarations, hardware and runtime evidence. Use that distinction on our unchanged original ST. This is a course-authored exercise, not a run of the full upstream skill or Siemens software.
+
+```sh
+python3 scripts/lab.py compare --output build/reference/case-context-review.csv
+python3 scripts/lab.py station
+```
+
+Create a context table: ST source present; native compile receipt present; 37 legacy vector observations present; real hardware configuration absent; vendor runtime absent. Explain the two t=5 pump-output mismatches. Cite the original files and the timing convention instead of labeling a missing context item a confirmed vulnerability.
+
+Then review the new Station contract: R2 deliberately inhibits pumps for inconsistent floats, but that policy can worsen overflow. A software reviewer can confirm the implementation follows the classroom sentence; the human must judge the field policy. Submit one confirmed finding, one limitation and one human question. The local comparison/test commands were executed; Siemens API behavior and the full five-pass upstream review are **NOT VERIFIED**.

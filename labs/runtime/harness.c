@@ -7,6 +7,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include "iec_std_lib.h"
+#include "accessor.h"
 #include "POUS.h"
 #include "POUS.c"
 TIME __CURRENT_TIME;
@@ -19,10 +20,10 @@ int iec_lib_snprintf(char *s, size_t n, const char *fmt, ...) {
 int main(int argc, char **argv) {
     if (argc != 2 || (strcmp(argv[1], "starter") && strcmp(argv[1], "timing") &&
         strcmp(argv[1], "station") && strcmp(argv[1], "original"))) return 2;
-    STARTER_data__ starter;
-    TIMING_data__ timing;
-    STATION_data__ station;
-    DUPLEXLEADLAG_data__ original;
+    STARTER_data__ starter = {0};
+    TIMING_data__ timing = {0};
+    STATION_data__ station = {0};
+    DUPLEXLEADLAG_data__ original = {0};
     STARTER_init__(&starter, 0); TIMING_init__(&timing, 0);
     STATION_init__(&station, 0); DUPLEXLEADLAG_init__(&original, 0);
     char line[512]; long long ms, previous = -1; int reset, b[10];

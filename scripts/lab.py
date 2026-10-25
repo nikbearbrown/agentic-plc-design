@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import platform
+import select
 import shutil
 import subprocess
 import sys
@@ -50,6 +51,8 @@ def build(target, apply=False, mutant=None, source=None):
     if not IEC.exists():
         raise SystemExit('Compiler missing. Follow labs/00-setup.md and run scripts/bootstrap.py --apply.')
     target.mkdir(parents=True, exist_ok=True)
+    for stale in ('plc-sim', 'build.json'):
+        (target / stale).unlink(missing_ok=True)
     station = source.read_text()
     if mutant:
         old, new = MUTANTS[mutant]
@@ -73,6 +76,7 @@ def build(target, apply=False, mutant=None, source=None):
             'sources': {str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else str(p): digest(p) for p in sources},
             'commands': commands, 'compiler': subprocess.check_output([compiler(), '--version'], text=True).splitlines()[0],
             'platform': platform.platform(), 'python': platform.python_version(),
+            'combined_st_sha256': digest(target / 'combined.st'),
             'executable_sha256': digest(target / 'plc-sim')}
     (target / 'build.json').write_text(json.dumps(meta, indent=2) + '\n')
     print('Compiled:', target / 'plc-sim')
@@ -81,6 +85,12 @@ def build(target, apply=False, mutant=None, source=None):
 class Native:
     """Pipe to the compiled binary, not a Python reimplementation of the controller."""
     def __init__(self, build_dir=DEFAULT_BUILD, mode='station'):
+        receipt = json.loads((build_dir / 'build.json').read_text())
+        if digest(build_dir / 'plc-sim') != receipt['executable_sha256']:
+            raise ValueError('Executable differs from build receipt; rebuild.')
+        for name, expected in receipt['sources'].items():
+            if digest(ROOT / name) != expected:
+                raise ValueError('Source changed since compilation; rebuild: ' + name)
         self.process = subprocess.Popen([str(build_dir / 'plc-sim'), mode], stdin=subprocess.PIPE,
                                         stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         self.t = -100
@@ -89,6 +99,9 @@ class Native:
         bits = list(bits) + [0] * (10-len(bits))
         self.process.stdin.write(' '.join(map(str, [self.t, int(reset)] + bits)) + '\n')
         self.process.stdin.flush()
+        if not select.select([self.process.stdout], [], [], 5)[0]:
+            self.process.kill()
+            raise TimeoutError('Compiled scan exceeded five seconds; process stopped.')
         line = self.process.stdout.readline()
         if not line:
             raise RuntimeError('Native harness stopped: ' + self.process.stderr.read())
@@ -134,10 +147,10 @@ def station_tests(build_dir):
         assert n.scan(inputs(), reset=True)[:2] == (0,0)
         assert n.scan(inputs(2))[:2] == (1,0)
         assert n.scan(inputs(1))[:2] == (1,0)
-        assert n.scan(inputs(0))[5:7] == (2,0)
+        assert n.scan(inputs(0))[5:7] == (2,0), 'drained cycle must select lead 2 and clear demand'
         assert n.scan(inputs(2))[:2] == (0,1), 'alternation'
         assert n.scan(inputs(2,p2_overtemp=1))[:2] == (1,0), 'fallback'
-        assert n.scan(inputs(2,p1_seal_fail=1,p2_overtemp=1))[:5] == (0,0,0,0,1)
+        assert n.scan(inputs(2,p1_seal_fail=1,p2_overtemp=1))[:5] == (0,0,0,0,1), 'both tripped: pumps off and no-pump alarm'
         assert n.scan(inputs(4,fs1_off=0))[:5] == (0,0,1,1,0), 'invalid input inhibition'
         assert n.scan(inputs(2), reset=True)[:2] == (1,0), 'cold reset'
         lag = [n.scan(inputs(3), ms=t, reset=(t == 0)) for t in range(0,5101,100)]
@@ -262,6 +275,8 @@ def test_all(build_dir):
 
 
 def main():
+    if sys.flags.optimize:
+        raise SystemExit('Do not run lab tests with Python -O: assertions must remain enabled.')
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest='command',required=True)
     b = sub.add_parser('build'); b.add_argument('--apply',action='store_true'); b.add_argument('--mutant',choices=MUTANTS)
@@ -273,6 +288,7 @@ def main():
     for name in ('replay','plant','compare'):
         sub.choices[name].add_argument('--output',type=Path)
     sub.choices['plant'].add_argument('--fault',choices=['none','pump1-trip','both-trip','bad-float','blocked-pump1'],default='none')
+    sub.choices['mutations'].add_argument('--apply',action='store_true')
     args = p.parse_args(); out = args.build_dir
     if args.command == 'build': build(out,args.apply,args.mutant,args.source)
     elif args.command == 'test': test_all(out)
@@ -282,6 +298,9 @@ def main():
     elif args.command == 'replay': replay(out,args.scenario,args.output or out/'replay.csv')
     elif args.command == 'plant': plant(out,args.output or out/'plant.csv',args.fault)
     elif args.command == 'mutations':
+        if not args.apply:
+            print('DRY RUN: would build and test 3 deliberately faulty copies under build/. Use --apply.')
+            return
         for mutant in MUTANTS:
             folder = ROOT/'build'/mutant
             build(folder,True,mutant)

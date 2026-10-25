@@ -76,3 +76,17 @@ Copy `../reference/tool-intake.md` to `scratch/intake-twincat-agent.md`. Pre-fil
 ```
 
 Write a two-sentence AI Use Disclosure if an AI helped you answer.
+
+## Executable classroom adaptation — prove the dialect boundary
+
+A vendor-specific ST assistant may know APIs and language extensions that a portable compiler does not. The learning problem is to separate a vendor's engineering procedure from evidence about the language subset actually used here. The current [upstream README](https://github.com/TechIndustryX/twincat-agent) requires Windows x64 and TwinCAT XAE; its [license](https://github.com/TechIndustryX/twincat-agent/blob/main/LICENSE) is noncommercial. We neither install it nor copy its code.
+
+```sh
+python3 scripts/lab.py build --apply
+python3 scripts/lab.py foundations
+python3 scripts/lab.py replay labs/scenarios/timer.json --output build/reference/case-portable-timer.csv
+```
+
+Inspect the portable `Timing` block and its 499/500 ms observations. Ask an agent to explain which claims these tests support: this exact MatIEC ST subset and timer behavior. They do not prove TwinCAT ExST compatibility, project-file compatibility, Windows automation or identical scheduling in a vendor runtime.
+
+Submit an intake verdict with separate columns for language, compiler, runtime, host platform and license. Mark each unsupported transfer **NOT VERIFIED**. Do not follow upstream suggestions for unrestricted tool approvals or activation/login: the course remains local and simulation-only. The executed local adaptation is recorded in the verification ledger.

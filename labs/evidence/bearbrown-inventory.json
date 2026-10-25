@@ -1,0 +1,63 @@
+{
+  "scan_date": "2026-10-25",
+  "source_repository": "/Users/bear/Documents/CoWork/bear-textbooks/books/bearbrown_co",
+  "source_revision": "4c5785dda2decb0a63b1a5677be3fcfb347cf74d",
+  "catalog_entries": 1646,
+  "direct_matches": [
+    {
+      "id": "TechIndustryX__twincat-agent",
+      "name": "twincat-mcp-agent",
+      "repoUrl": "https://github.com/TechIndustryX/twincat-agent",
+      "description": "TwinCAT ST Master - Expert in Beckhoff IEC 61131-3 ExST development",
+      "version": "2026.06.04",
+      "license": "",
+      "grade": "CLEARED_STATIC",
+      "receipts": {
+        "commit_sha": null,
+        "audited_date": "",
+        "sandbox": false
+      },
+      "auditedAt": "2026-08-05T17:20:23Z"
+    },
+    {
+      "id": "bulaofen0036-coder__tia_portal_openness_mcp",
+      "name": "tia-portal-openness-mcp",
+      "repoUrl": "https://github.com/bulaofen0036-coder/tia_portal_openness_mcp",
+      "description": "Siemens TIA Portal (\u535a\u9014) Openness automation via the TiaMcpServer MCP \u2014 project/PLC/HMI scaffolding, SCL/LAD authoring, compile, download, online read. Bundles the V21 server for one-command install.",
+      "version": "2.2.5",
+      "license": "",
+      "grade": "CLEARED_STATIC",
+      "receipts": {
+        "commit_sha": null,
+        "audited_date": "",
+        "sandbox": false
+      },
+      "auditedAt": "2026-08-07T05:40:00Z"
+    },
+    {
+      "id": "czarnak__totally-integrated-claude",
+      "name": "totally-integrated-claude",
+      "repoUrl": "https://github.com/czarnak/totally-integrated-claude",
+      "description": "Siemens TIA Portal engineering automation for Claude Code. Provides routed skills for Python TIA Scripting and C# Openness API (project lifecycle, PLC, HMI, devices, networks, drives, import/export, Add-Ins).",
+      "version": "4.3.2",
+      "license": "MIT",
+      "grade": "CLEARED_STATIC",
+      "receipts": {
+        "commit_sha": null,
+        "audited_date": "",
+        "sandbox": false
+      },
+      "auditedAt": "2026-08-07T11:16:44Z"
+    }
+  ],
+  "searched": [
+    "data/skills/catalog.json",
+    "content/skills/*/SKILL.md",
+    "data/agents/catalog.json",
+    "data/agents/details.json",
+    "data/n8n/details.json",
+    "public/n8n/workflows",
+    "data/catalog/audit-entries.json"
+  ],
+  "execution": "read-only inventory; no vendor skill/runtime execution"
+}

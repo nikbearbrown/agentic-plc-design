@@ -36,3 +36,13 @@ There are no grades in this repo. The assessment is the work product and the **A
 ## Pace
 
 If you only have an hour a night, do one lab step a night and stop at the "Done when." Never skip the validation exercise to save time: it is the part that prepares you for the day the tools change.
+
+## Executable expansion and teaching order
+
+Add about 18–24 hours using [the nine-lab spine](labs/README.md), for roughly 60–75 hours total including the original design work. These are teaching estimates, not measured learner completion times. Insert Lab 00 after orientation; Labs 01–03 alongside Modules 05–06; Lab 04 with incident diagnosis; Labs 05–07 with agent-kit work; and Lab 08 as the synthetic, account-free capstone. The legacy customer-job capstone remains optional and requires company-policy permission.
+
+Use the [100-point rubric](labs/08-capstone.md) for a classroom assessment. The original modules' AI Use Disclosures remain required. A passing grade does not sign STATUS gates. The electrical-table and CAD branches remain unverified until reviewed/run by the appropriate human; they do not block the simulation-only spine.
+
+## End-of-course case studies
+
+Finish with [four case studies](case-studies/README.md): TIA Portal Openness MCP, totally-integrated-claude, TwinCAT agent, and the adjacent evidence-driven repair workflow. Allow another 3–4 hours for intake comparisons and local executable adaptations. Vendor tools are discussed and attributed; only the course's simulation exercises run here.

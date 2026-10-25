@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- SYNTHETIC: hand-written for training. NOT exported from Studio 5000. Real exports have far more elements. -->
+<RSLogix5000Content SchemaRevision="1.0" ContainsContext="false">
+  <Controller Name="DemoStation" ProcessorType="DEMO">
+    <Tags>
+      <Tag Name="P1_RUN_FB" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P2_RUN_FB" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P1_HOA_AUTO" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P2_HOA_AUTO" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P1_SEAL_FAIL" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P1_OVERTEMP" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P1_RUN_CMD" TagType="Base" DataType="BOOL"/>
+      <Tag Name="P2_RUN_CMD" TagType="Base" DataType="BOOL"/>
+      <Tag Name="FS1_OFF" TagType="Base" DataType="BOOL"/>
+      <Tag Name="FS2_LEAD" TagType="Base" DataType="BOOL"/>
+      <Tag Name="FS3_LAG" TagType="Base" DataType="BOOL"/>
+      <Tag Name="FS4_HIGH" TagType="Base" DataType="BOOL"/>
+      <Tag Name="LEAD_IS_P1" TagType="Base" DataType="BOOL"/>
+      <Tag Name="CALL" TagType="Base" DataType="BOOL"/>
+    </Tags>
+    <Programs>
+      <Program Name="MainProgram">
+        <Routines>
+          <Routine Name="MainRoutine" Type="RLL">
+            <RLLContent>
+              <Rung Number="0" Type="N"><Text><![CDATA[XIC(FS2_LEAD)OTL(CALL);]]></Text></Rung>
+              <Rung Number="1" Type="N"><Text><![CDATA[XIO(FS1_OFF)OTU(CALL);]]></Text></Rung>
+              <Rung Number="2" Type="N"><Text><![CDATA[XIC(CALL)XIC(LEAD_IS_P1)XIC(P1_HOA_AUTO)XIO(P1_SEAL_FAIL)OTE(P1_RUN_CMD);]]></Text></Rung>
+              <Rung Number="3" Type="N"><Text><![CDATA[XIC(CALL)XIO(LEAD_IS_P1)XIC(P2_HOA_AUTO)OTE(P2_RUN_CMD);]]></Text></Rung>
+              <Rung Number="4" Type="N"><Text><![CDATA[XIC(FS3_LAG)XIC(P2_HOA_AUTO)OTE(P2_RUN_CMD);]]></Text></Rung>
+              <Rung Number="5" Type="N"><Text><![CDATA[XIC(FS4_HIGH)OTE(HIGH_LEVEL_ALM);]]></Text></Rung>
+            </RLLContent>
+          </Routine>
+        </Routines>
+      </Program>
+    </Programs>
+  </Controller>
+</RSLogix5000Content>

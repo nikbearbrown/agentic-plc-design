@@ -1,0 +1,11 @@
+id,requirement,section,quote
+R1,Submit shop drawings BOM and control narrative before fabrication,1.1,"shop drawings, a bill of materials and a written control narrative"
+R2,Enclosure is NEMA 4X stainless,2.1,NEMA 4X stainless steel
+R3,Control power transformer 120 VAC,2.2,120 VAC derived from a control power transformer
+R4,Alternate lead pump each cycle,2.3,alternate the lead pump after each pumping cycle
+R5,Pumps stop only at the off float,2.3,stop at the off float only
+R6,Beacon visible from 100 feet on high level,2.4,visible from 100 feet that is activated by high wet well level
+R7,Provide an audible horn with silence,2.4,audible horn with silence pushbutton
+R8,Factory test of control sequences,3.1,witnessed functional test of every control sequence
+R9,Alarm communicated to SCADA,2.3,communicated to the owner's SCADA system
+R10,Provide a 10 percent spare I/O,2.2,

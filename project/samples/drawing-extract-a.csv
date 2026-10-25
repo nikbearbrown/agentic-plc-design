@@ -1,0 +1,22 @@
+tag,description
+P1_MPCB,Pump 1 motor circuit protector
+P2_MPCB,Pump 2 motor circuit protector
+P1_K1,"Pump 1 contactor (10 HP, 460 V)"
+P2_K1,"Pump 2 contactor (7.5 HP, 460 V)"
+P1_OL1,Pump 1 overload relay set to nameplate
+P1_HOA,Pump 1 Hand-Off-Auto
+P2_HOA,Pump 2 Hand-Off-Auto
+P1_RUN_PL,Pump 1 run light
+P2_RUN_PL,Pump 2 run light
+P1_FAIL_PL,Pump 1 fail light
+P2_FAIL_PL,Pump 2 fail light
+FS1_OFF,Pumps-off float
+FS2_LEAD,Lead-on float
+FS3_LAG,Lag-on float
+FS4_HIGH,High-level float
+IS1,"Intrinsically safe relay, 2 channel (floats 1-2)"
+IS2,"Intrinsically safe relay, 2 channel (floats 3-4)"
+BCN1,Alarm beacon
+PB_SIL,Alarm silence
+ALT1,Duplex alternator relay
+P3_K1,"Pump 3 contactor (7.5 HP, 460 V)"

@@ -1,0 +1,12 @@
+;;; A "helpful" script an AI might write when asked to "update the drawing for a 10 HP pump".
+;;; Saved as .txt so nobody loads it by accident. Module 4 asks you to review it, not run it.
+(defun c:FIXHP ( / ss)
+  (command "_.-purge" "_all" "*" "_n")
+  (setq ss (ssget "_X" '((0 . "TEXT"))))
+  (command "_.erase" ss "")
+  (setq ss (ssget "_X" '((0 . "TEXT"))))
+  (repeat (sslength ss)
+    (entmod (subst (cons 1 "10 HP") (assoc 1 (entget (ssname ss 0))) (entget (ssname ss 0))))
+  )
+  (princ)
+)

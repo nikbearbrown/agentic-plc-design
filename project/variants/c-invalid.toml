@@ -1,0 +1,29 @@
+# Variant C: deliberately broken. Module 2 asks you to predict what the checker says.
+[job]
+name = "Demo Lift Station C"
+number = "DEMO-0003"
+revision = "A"
+
+[power]
+voltage = 460
+phase = 3
+hz = 60
+
+[pumps]
+count = 2
+hp = 6
+starter = "vfd"
+alternation = "alternate"
+
+[level]
+method = "transducer"
+hazardous_wet_well = false
+
+[control]
+platform = "relay"
+
+[alarms]
+points = ["seal_fail_p1", "seal_fail_p3", "overtemp_p2"]
+
+[options]
+generator_transfer = true

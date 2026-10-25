@@ -1,0 +1,29 @@
+# Variant A: the plain duplex lift station. Relay control, floats, across-the-line starters.
+[job]
+name = "Demo Lift Station A"
+number = "DEMO-0001"
+revision = "A"
+
+[power]
+voltage = 460
+phase = 3
+hz = 60
+
+[pumps]
+count = 2
+hp = 7.5
+starter = "across-the-line"
+alternation = "alternate"
+
+[level]
+method = "floats"
+hazardous_wet_well = true
+
+[control]
+platform = "relay"
+
+[alarms]
+points = ["high_level", "float_fault", "seal_fail_p1", "seal_fail_p2", "overtemp_p1", "overtemp_p2"]
+
+[options]
+generator_transfer = false

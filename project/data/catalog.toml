@@ -1,0 +1,74 @@
+# A deliberately generic parts catalog. Part numbers are invented ("GEN-...").
+# Replace this file with your shop's real catalog (Module 3 shows how).
+# Real selection is by horsepower rating at the voltage, not amps alone; the
+# sizing here is a simplification on purpose. Module 7 asks you to find it.
+
+[meta]
+verified = false
+verified_by = ""
+note = "Invented parts. Not a real catalog. Not for ordering."
+
+# Chosen as the smallest rating >= motor FLA.
+[[contactor]]
+part = "GEN-CONT-09A"
+amps = 9
+[[contactor]]
+part = "GEN-CONT-18A"
+amps = 18
+[[contactor]]
+part = "GEN-CONT-25A"
+amps = 25
+[[contactor]]
+part = "GEN-CONT-32A"
+amps = 32
+[[contactor]]
+part = "GEN-CONT-45A"
+amps = 45
+[[contactor]]
+part = "GEN-CONT-65A"
+amps = 65
+
+[[soft_starter]]
+part = "GEN-SS-18A"
+amps = 18
+[[soft_starter]]
+part = "GEN-SS-32A"
+amps = 32
+[[soft_starter]]
+part = "GEN-SS-45A"
+amps = 45
+[[soft_starter]]
+part = "GEN-SS-65A"
+amps = 65
+
+[[vfd]]
+part = "GEN-VFD-18A"
+amps = 18
+[[vfd]]
+part = "GEN-VFD-32A"
+amps = 32
+[[vfd]]
+part = "GEN-VFD-45A"
+amps = 45
+[[vfd]]
+part = "GEN-VFD-65A"
+amps = 65
+
+[fixed]
+hoa_switch = "GEN-HOA-22MM"
+run_light = "GEN-PL-GREEN-22MM"
+fail_light = "GEN-PL-RED-22MM"
+float_switch = "GEN-FLOAT-NC"
+level_transducer = "GEN-LT-4-20MA"
+is_barrier_2ch = "GEN-IS-REL-2CH"
+is_barrier_analog = "GEN-IS-BAR-AN"
+alternator_relay = "GEN-ALT-RELAY"
+alarm_beacon = "GEN-BEACON-RED"
+alarm_silence = "GEN-PB-BLACK-22MM"
+ats_interface_relay = "GEN-RELAY-DPDT"
+plc_cpu = "GEN-PLC-CPU"
+plc_di_16 = "GEN-PLC-DI16"
+plc_do_16 = "GEN-PLC-DO16"
+plc_ai_4 = "GEN-PLC-AI4"
+rtu = "GEN-RTU-BASE"
+motor_protector = "GEN-MPCB"

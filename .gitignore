@@ -1,0 +1,7 @@
+instructor/
+__pycache__/
+*.pyc
+project/lisp/apd-job-*.lsp
+.DS_Store
+scratch/*
+!scratch/README.md

@@ -1,0 +1,29 @@
+# Variant B: 15 HP VFDs, transducer level, PLC, generator. The "10 percent that varies."
+[job]
+name = "Demo Lift Station B"
+number = "DEMO-0002"
+revision = "A"
+
+[power]
+voltage = 460
+phase = 3
+hz = 60
+
+[pumps]
+count = 2
+hp = 15
+starter = "vfd"
+alternation = "alternate"
+
+[level]
+method = "transducer"
+hazardous_wet_well = true
+
+[control]
+platform = "plc"
+
+[alarms]
+points = ["high_level", "float_fault", "power_fail", "gen_running", "seal_fail_p1", "seal_fail_p2", "overtemp_p1", "overtemp_p2"]
+
+[options]
+generator_transfer = true

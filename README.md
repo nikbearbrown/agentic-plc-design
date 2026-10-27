@@ -34,6 +34,8 @@ The prompts are domain-specific on purpose. There are no generic "write me a PLC
 
 ## Start here
 
+**New to this? Set up first:** [SETUP.md](SETUP.md) works for Windows, Mac and Linux, and [SETUP-PROMPT.md](SETUP-PROMPT.md) lets an AI agent do it for you one step at a time.
+
 ```bash
 cd agentic-plc-design
 ./check.sh

@@ -14,6 +14,8 @@ python3 project/tools/apd.py --help
 
 On another computer substitute the clone's absolute path once. The original design tests require Python 3.11+. The source installer requires **Python 3.12+** for safe archive extraction, plus a working C/C++ compiler, SDK/system headers, Make, Flex, Perl, curl and tar support. On the tested Mac these prerequisites already existed. This course does not install Command Line Tools, accept an Xcode license, use sudo, install Homebrew or change the network. If a prerequisite is missing, record the exact missing tool and stop setup for local owner action; the original Python lessons remain available.
 
+Not sure your computer is ready? Run `python3 scripts/preflight.py`: it checks everything below read-only and prints the exact fix for your system. Full setup for Windows, Mac and Linux is in [SETUP.md](../SETUP.md).
+
 Check the environment:
 
 ```sh

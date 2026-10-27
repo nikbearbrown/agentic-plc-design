@@ -14,7 +14,7 @@
 
 ---
 
-**Prefer to have an AI do it?** Use [SETUP-PROMPTS.md](SETUP-PROMPTS.md): one prompt coaches you through Steps 1 to 3, and a second one lets Claude Code do Steps 4 to 7 for you, one command at a time.
+**Other systems and the general version:** [../SETUP.md](../SETUP.md). **Prefer to have an AI do it?** Use [SETUP-PROMPTS.md](SETUP-PROMPTS.md): one prompt coaches you through Steps 1 to 3, and a second one lets Claude Code do Steps 4 to 7 for you, one command at a time.
 
 ## Before you start
 

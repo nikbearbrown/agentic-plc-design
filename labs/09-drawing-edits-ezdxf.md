@@ -9,7 +9,7 @@ The safety pattern is the same in both: **plan by default, write only to a new c
 ## Set up (once)
 
 ```sh
-cd /Users/bear/Documents/CoWork/bear-textbooks/books/agentic-plc-design
+cd agentic-plc-design
 python3 scripts/dxf_setup.py            # dry run: prints the plan
 python3 scripts/dxf_setup.py --apply    # creates .toolchain/venv-dxf and installs pinned packages
 ```

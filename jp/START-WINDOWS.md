@@ -14,6 +14,8 @@
 
 ---
 
+**Prefer to have an AI do it?** Use [SETUP-PROMPTS.md](SETUP-PROMPTS.md): one prompt coaches you through Steps 1 to 3, and a second one lets Claude Code do Steps 4 to 7 for you, one command at a time.
+
 ## Before you start
 
 - Windows 10 version 2004 or newer, or Windows 11. (Check: Start, type `winver`.)
